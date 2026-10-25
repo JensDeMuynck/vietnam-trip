@@ -799,8 +799,24 @@
   .gl-kind.stay { color: var(--accent-gold); }
   .gl-title { font-weight: 600; font-size: 0.98rem; }
   .gl-sub { font-size: 0.84rem; color: var(--text-muted); }
-  .gl-credit { margin-top: auto; padding-top: 8px; font-size: 0.7rem; color: var(--text-muted); }
-  .gl-credit a { color: var(--text-muted); }
+  .gl-media { position: relative; }
+  .gl-count {
+    position: absolute; top: 10px; right: 10px; pointer-events: none;
+    font-size: 0.72rem; font-weight: 600; padding: 3px 9px; border-radius: 999px;
+    background: rgba(16, 28, 34, 0.78); color: var(--text);
+  }
+  .gl-strip { position: absolute; left: 8px; bottom: 8px; display: flex; gap: 6px; }
+  .gl-thumb {
+    width: 52px; height: 38px; padding: 0; border-radius: 5px; overflow: hidden; cursor: zoom-in;
+    border: 1.5px solid rgba(234, 231, 222, 0.85); background: var(--surface-alt);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  }
+  .gl-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .gl-dots { display: flex; justify-content: center; gap: 6px; margin-bottom: 10px; min-height: 7px; }
+  .gl-dots i { width: 7px; height: 7px; border-radius: 50%; background: rgba(234, 231, 222, 0.3); }
+  .gl-dots i.on { background: var(--accent-gold); }
+  .gl-lb-credit { margin-top: 6px; font-size: 0.72rem; }
+  .gl-lb-credit a { color: var(--text-muted); }
   .gl-lightbox { position: fixed; inset: 0; z-index: 20; background: rgba(8, 14, 17, 0.94); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 16px; }
   .gl-lightbox[hidden] { display: none; }
   .gl-lightbox img { max-width: 100%; max-height: calc(100vh - 140px); border-radius: 6px; object-fit: contain; }
@@ -1714,7 +1730,7 @@
   </div>
 
   <div class="gallery" id="view-gallery" hidden>
-    <p class="tx-intro">What you'll see, do, and where you'll stay. Tap a photo to see it larger.</p>
+    <p class="tx-intro">What you'll see, do, and where you'll stay. Tap a photo to browse all its photos full screen.</p>
     <div class="gl-filters" role="group" aria-label="Filter">
       <button type="button" data-kind="all" aria-pressed="true">All</button>
       <button type="button" data-kind="stay" aria-pressed="false">Where we stay</button>
@@ -1727,7 +1743,7 @@
       <button type="button" class="gl-lb-btn gl-lb-prev" aria-label="Previous photo">‹</button>
       <button type="button" class="gl-lb-btn gl-lb-next" aria-label="Next photo">›</button>
       <img alt="">
-      <div class="gl-lb-cap"><div class="gl-title"></div><div class="gl-sub"></div></div>
+      <div class="gl-lb-cap"><div class="gl-dots"></div><div class="gl-title"></div><div class="gl-sub"></div><div class="gl-lb-credit"></div></div>
     </div>
   </div>
 
@@ -2064,217 +2080,625 @@
   "sec": "Hanoi",
   "kind": "stay",
   "title": "Silk Path Boutique Hanoi",
-  "sub": "Night 1 · on Hoan Kiem Lake (photo: the lake, around the corner)",
-  "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/Hanoi%2C_Vietnam%2C_Hoan_Kiem_Lake.jpg/1280px-Hanoi%2C_Vietnam%2C_Hoan_Kiem_Lake.jpg",
-  "credit": "Vyacheslav Argenberg, CC BY 4.0",
-  "src": "https://commons.wikimedia.org/wiki/File:Hanoi,_Vietnam,_Hoan_Kiem_Lake.jpg"
+  "sub": "Night 1 · right by Hoan Kiem Lake (photos: the lake)",
+  "imgs": [
+   {
+    "t": "https://images.pexels.com/photos/19504816/pexels-photo-19504816.jpeg?auto=compress&cs=tinysrgb&w=800",
+    "u": "https://images.pexels.com/photos/19504816/pexels-photo-19504816.jpeg?auto=compress&cs=tinysrgb&w=1800",
+    "c": "Pexels",
+    "s": "https://www.pexels.com/photo/19504816/"
+   },
+   {
+    "t": "https://images.pexels.com/photos/33946371/pexels-photo-33946371.jpeg?auto=compress&cs=tinysrgb&w=800",
+    "u": "https://images.pexels.com/photos/33946371/pexels-photo-33946371.jpeg?auto=compress&cs=tinysrgb&w=1800",
+    "c": "Pexels",
+    "s": "https://www.pexels.com/photo/33946371/"
+   },
+   {
+    "t": "https://images.pexels.com/photos/35583096/pexels-photo-35583096.jpeg?auto=compress&cs=tinysrgb&w=800",
+    "u": "https://images.pexels.com/photos/35583096/pexels-photo-35583096.jpeg?auto=compress&cs=tinysrgb&w=1800",
+    "c": "Pexels",
+    "s": "https://www.pexels.com/photo/35583096/"
+   }
+  ]
  },
  {
   "sec": "Hanoi",
   "kind": "do",
   "title": "Train Street",
   "sub": "Day 1 · coffee next to the tracks",
-  "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/70/Train_street_in_Hanoi.jpg/1280px-Train_street_in_Hanoi.jpg",
-  "credit": "Kris Martyn, CC BY-SA 4.0",
-  "src": "https://commons.wikimedia.org/wiki/File:Train_street_in_Hanoi.jpg"
+  "imgs": [
+   {
+    "t": "https://images.pexels.com/photos/28455288/pexels-photo-28455288.jpeg?auto=compress&cs=tinysrgb&w=800",
+    "u": "https://images.pexels.com/photos/28455288/pexels-photo-28455288.jpeg?auto=compress&cs=tinysrgb&w=1800",
+    "c": "Pexels",
+    "s": "https://www.pexels.com/photo/28455288/"
+   },
+   {
+    "t": "https://images.pexels.com/photos/19710462/pexels-photo-19710462.jpeg?auto=compress&cs=tinysrgb&w=800",
+    "u": "https://images.pexels.com/photos/19710462/pexels-photo-19710462.jpeg?auto=compress&cs=tinysrgb&w=1800",
+    "c": "Pexels",
+    "s": "https://www.pexels.com/photo/19710462/"
+   },
+   {
+    "t": "https://images.pexels.com/photos/32105574/pexels-photo-32105574.jpeg?auto=compress&cs=tinysrgb&w=800",
+    "u": "https://images.pexels.com/photos/32105574/pexels-photo-32105574.jpeg?auto=compress&cs=tinysrgb&w=1800",
+    "c": "Pexels",
+    "s": "https://www.pexels.com/photo/32105574/"
+   },
+   {
+    "t": "https://images.pexels.com/photos/30506072/pexels-photo-30506072.jpeg?auto=compress&cs=tinysrgb&w=800",
+    "u": "https://images.pexels.com/photos/30506072/pexels-photo-30506072.jpeg?auto=compress&cs=tinysrgb&w=1800",
+    "c": "Pexels",
+    "s": "https://www.pexels.com/photo/30506072/"
+   }
+  ]
  },
  {
   "sec": "Hanoi",
   "kind": "do",
   "title": "The Old Quarter and Beer Street",
   "sub": "Day 1 · Tạ Hiện and the streets around it",
-  "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/Ta-hien-street-3559133.jpg/1280px-Ta-hien-street-3559133.jpg",
-  "credit": "Wikimedia Commons, CC0",
-  "src": "https://commons.wikimedia.org/wiki/File:Ta-hien-street-3559133.jpg"
+  "imgs": [
+   {
+    "t": "https://images.pexels.com/photos/19488231/pexels-photo-19488231.jpeg?auto=compress&cs=tinysrgb&w=800",
+    "u": "https://images.pexels.com/photos/19488231/pexels-photo-19488231.jpeg?auto=compress&cs=tinysrgb&w=1800",
+    "c": "Pexels",
+    "s": "https://www.pexels.com/photo/19488231/"
+   },
+   {
+    "t": "https://images.pexels.com/photos/34305030/pexels-photo-34305030.jpeg?auto=compress&cs=tinysrgb&w=800",
+    "u": "https://images.pexels.com/photos/34305030/pexels-photo-34305030.jpeg?auto=compress&cs=tinysrgb&w=1800",
+    "c": "Pexels",
+    "s": "https://www.pexels.com/photo/34305030/"
+   },
+   {
+    "t": "https://images.pexels.com/photos/30829091/pexels-photo-30829091.jpeg?auto=compress&cs=tinysrgb&w=800",
+    "u": "https://images.pexels.com/photos/30829091/pexels-photo-30829091.jpeg?auto=compress&cs=tinysrgb&w=1800",
+    "c": "Pexels",
+    "s": "https://www.pexels.com/photo/30829091/"
+   }
+  ]
  },
  {
   "sec": "Hanoi",
   "kind": "stay",
   "title": "Ben's Apartment",
   "sub": "Nights 3–4 · Hai Bà Trưng, near Hoan Kiem Lake",
-  "img": "https://staynow.vn/wp-content/uploads/2025/06/hanoi-bens-apartment-and-hotel-1749603072.jpg",
-  "credit": "Photo via StayNow",
-  "src": "https://staynow.vn/hanoi-bens-apartment-and-hotel.html"
+  "imgs": [
+   {
+    "t": "https://staynow.vn/wp-content/uploads/2025/06/hanoi-bens-apartment-and-hotel-1749603072.jpg",
+    "u": "https://staynow.vn/wp-content/uploads/2025/06/hanoi-bens-apartment-and-hotel-1749603072.jpg",
+    "c": "Photo via StayNow",
+    "s": "https://staynow.vn/hanoi-bens-apartment-and-hotel.html"
+   }
+  ]
  },
  {
   "sec": "Hanoi",
   "kind": "do",
   "title": "MF Spa",
   "sub": "Day 4 · 90 min Swedish massage at 10:00",
-  "img": "https://mfspahanoi.com/UploadFile/Article/about-home.jpg",
-  "credit": "Photo: MF Spa Hanoi",
-  "src": "https://mfspahanoi.com"
+  "imgs": [
+   {
+    "t": "https://mfspahanoi.com/UploadFile/Article/about-home.jpg",
+    "u": "https://mfspahanoi.com/UploadFile/Article/about-home.jpg",
+    "c": "Photo: MF Spa Hanoi",
+    "s": "https://mfspahanoi.com"
+   }
+  ]
  },
  {
   "sec": "Hanoi",
   "kind": "see",
-  "title": "Sky Lotte Observation Deck",
-  "sub": "Day 4 · Hanoi from the 65th floor",
-  "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/Hanoi_panoramic_view_from_Lotte_3.jpg/1280px-Hanoi_panoramic_view_from_Lotte_3.jpg",
-  "credit": "kallerna, CC BY-SA 4.0",
-  "src": "https://commons.wikimedia.org/wiki/File:Hanoi_panoramic_view_from_Lotte_3.jpg"
+  "title": "Hanoi from above",
+  "sub": "Day 4 · Sky Lotte Observation Deck",
+  "imgs": [
+   {
+    "t": "https://images.pexels.com/photos/29749169/pexels-photo-29749169.jpeg?auto=compress&cs=tinysrgb&w=800",
+    "u": "https://images.pexels.com/photos/29749169/pexels-photo-29749169.jpeg?auto=compress&cs=tinysrgb&w=1800",
+    "c": "Pexels",
+    "s": "https://www.pexels.com/photo/29749169/"
+   },
+   {
+    "t": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/Hanoi_panoramic_view_from_Lotte_3.jpg/960px-Hanoi_panoramic_view_from_Lotte_3.jpg",
+    "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/Hanoi_panoramic_view_from_Lotte_3.jpg/1280px-Hanoi_panoramic_view_from_Lotte_3.jpg",
+    "c": "kallerna, CC BY-SA 4.0 · Wikimedia",
+    "s": "https://commons.wikimedia.org/wiki/File:Hanoi_panoramic_view_from_Lotte_3.jpg"
+   }
+  ]
+ },
+ {
+  "sec": "Hanoi",
+  "kind": "stay",
+  "title": "Last night by West Lake",
+  "sub": "Night 14 · Westlake House (shortlisted)",
+  "imgs": [
+   {
+    "t": "https://images.pexels.com/photos/19577375/pexels-photo-19577375.jpeg?auto=compress&cs=tinysrgb&w=800",
+    "u": "https://images.pexels.com/photos/19577375/pexels-photo-19577375.jpeg?auto=compress&cs=tinysrgb&w=1800",
+    "c": "Pexels",
+    "s": "https://www.pexels.com/photo/19577375/"
+   }
+  ]
  },
  {
   "sec": "Ha Long Bay",
   "kind": "stay",
   "title": "Ambassador Cruise",
   "sub": "Night 2 · on the ship in Ha Long Bay",
-  "img": "https://ambassadorcruise.com/wp-content/uploads/2025/10/ASC362.webp",
-  "credit": "Photo: Ambassador Cruise",
-  "src": "https://ambassadorcruise.com/journeys/hanoi-ha-long-overnight-escape-3d/"
+  "imgs": [
+   {
+    "t": "https://ambassadorcruise.com/wp-content/uploads/2025/10/ASC362.webp",
+    "u": "https://ambassadorcruise.com/wp-content/uploads/2025/10/ASC362.webp",
+    "c": "Photo: Ambassador Cruise",
+    "s": "https://ambassadorcruise.com/journeys/hanoi-ha-long-overnight-escape-3d/"
+   },
+   {
+    "t": "https://ambassadorcruise.com/wp-content/uploads/2025/10/AC1598.webp",
+    "u": "https://ambassadorcruise.com/wp-content/uploads/2025/10/AC1598.webp",
+    "c": "Photo: Ambassador Cruise",
+    "s": "https://ambassadorcruise.com/journeys/hanoi-ha-long-overnight-escape-3d/"
+   },
+   {
+    "t": "https://ambassadorcruise.com/wp-content/uploads/2025/10/signature315.webp",
+    "u": "https://ambassadorcruise.com/wp-content/uploads/2025/10/signature315.webp",
+    "c": "Photo: Ambassador Cruise",
+    "s": "https://ambassadorcruise.com/journeys/hanoi-ha-long-overnight-escape-3d/"
+   }
+  ]
  },
  {
   "sec": "Ha Long Bay",
   "kind": "see",
-  "title": "The karst islands of Ha Long Bay",
-  "sub": "Days 2–3 · from the sundeck",
-  "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4f/Ha_Long_Bay%2C_Tower_karsts.jpg/1280px-Ha_Long_Bay%2C_Tower_karsts.jpg",
-  "credit": "Vyacheslav Argenberg, CC BY 4.0",
-  "src": "https://commons.wikimedia.org/wiki/File:Ha_Long_Bay,_Tower_karsts.jpg"
+  "title": "Ha Long Bay",
+  "sub": "Days 2–3 · 1,600 limestone islands",
+  "imgs": [
+   {
+    "t": "https://images.pexels.com/photos/6871874/pexels-photo-6871874.jpeg?auto=compress&cs=tinysrgb&w=800",
+    "u": "https://images.pexels.com/photos/6871874/pexels-photo-6871874.jpeg?auto=compress&cs=tinysrgb&w=1800",
+    "c": "Pexels",
+    "s": "https://www.pexels.com/photo/6871874/"
+   },
+   {
+    "t": "https://images.pexels.com/photos/6871173/pexels-photo-6871173.jpeg?auto=compress&cs=tinysrgb&w=800",
+    "u": "https://images.pexels.com/photos/6871173/pexels-photo-6871173.jpeg?auto=compress&cs=tinysrgb&w=1800",
+    "c": "Pexels",
+    "s": "https://www.pexels.com/photo/6871173/"
+   },
+   {
+    "t": "https://images.pexels.com/photos/58597/pexels-photo-58597.jpeg?auto=compress&cs=tinysrgb&w=800",
+    "u": "https://images.pexels.com/photos/58597/pexels-photo-58597.jpeg?auto=compress&cs=tinysrgb&w=1800",
+    "c": "Pexels",
+    "s": "https://www.pexels.com/photo/58597/"
+   },
+   {
+    "t": "https://images.pexels.com/photos/5041966/pexels-photo-5041966.jpeg?auto=compress&cs=tinysrgb&w=800",
+    "u": "https://images.pexels.com/photos/5041966/pexels-photo-5041966.jpeg?auto=compress&cs=tinysrgb&w=1800",
+    "c": "Pexels",
+    "s": "https://www.pexels.com/photo/5041966/"
+   },
+   {
+    "t": "https://images.pexels.com/photos/6877795/pexels-photo-6877795.jpeg?auto=compress&cs=tinysrgb&w=800",
+    "u": "https://images.pexels.com/photos/6877795/pexels-photo-6877795.jpeg?auto=compress&cs=tinysrgb&w=1800",
+    "c": "Pexels",
+    "s": "https://www.pexels.com/photo/6877795/"
+   }
+  ]
+ },
+ {
+  "sec": "Ha Long Bay",
+  "kind": "do",
+  "title": "Kayaking at Luon Cave",
+  "sub": "Day 2 · by kayak or bamboo boat",
+  "imgs": [
+   {
+    "t": "https://images.pexels.com/photos/7276634/pexels-photo-7276634.jpeg?auto=compress&cs=tinysrgb&w=800",
+    "u": "https://images.pexels.com/photos/7276634/pexels-photo-7276634.jpeg?auto=compress&cs=tinysrgb&w=1800",
+    "c": "Pexels",
+    "s": "https://www.pexels.com/photo/7276634/"
+   }
+  ]
  },
  {
   "sec": "Ha Long Bay",
   "kind": "see",
   "title": "Sung Sot Cave",
   "sub": "Day 2 · the \"Surprise Cave\"",
-  "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/Sung_Sot_Cave%2C_Ha_Long_Bay%2C_Vietnam%2C_20240128_1607_3880.jpg/1280px-Sung_Sot_Cave%2C_Ha_Long_Bay%2C_Vietnam%2C_20240128_1607_3880.jpg",
-  "credit": "Jakub Hałun, CC BY 4.0",
-  "src": "https://commons.wikimedia.org/wiki/File:Sung_Sot_Cave,_Ha_Long_Bay,_Vietnam,_20240128_1607_3880.jpg"
+  "imgs": [
+   {
+    "t": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/Sung_Sot_Cave%2C_Ha_Long_Bay%2C_Vietnam%2C_20240128_1607_3880.jpg/960px-Sung_Sot_Cave%2C_Ha_Long_Bay%2C_Vietnam%2C_20240128_1607_3880.jpg",
+    "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/Sung_Sot_Cave%2C_Ha_Long_Bay%2C_Vietnam%2C_20240128_1607_3880.jpg/1280px-Sung_Sot_Cave%2C_Ha_Long_Bay%2C_Vietnam%2C_20240128_1607_3880.jpg",
+    "c": "Jakub Hałun, CC BY 4.0 · Wikimedia",
+    "s": "https://commons.wikimedia.org/wiki/File:Sung_Sot_Cave,_Ha_Long_Bay,_Vietnam,_20240128_1607_3880.jpg"
+   }
+  ]
+ },
+ {
+  "sec": "Ha Long Bay",
+  "kind": "see",
+  "title": "The view from the top",
+  "sub": "Day 3 · sunrise climb at Titov Island",
+  "imgs": [
+   {
+    "t": "https://images.pexels.com/photos/3214952/pexels-photo-3214952.jpeg?auto=compress&cs=tinysrgb&w=800",
+    "u": "https://images.pexels.com/photos/3214952/pexels-photo-3214952.jpeg?auto=compress&cs=tinysrgb&w=1800",
+    "c": "Pexels",
+    "s": "https://www.pexels.com/photo/3214952/"
+   }
+  ]
  },
  {
   "sec": "Ha Long Bay",
   "kind": "do",
   "title": "Lunch in the Dragon Pearl Cave",
   "sub": "Day 3 · \"Tastes of the World\" after the show",
-  "img": "https://ambassadorcruise.com/wp-content/uploads/2026/08/ambassador-overnight-escape-3d2n-alt2.webp",
-  "credit": "Photo: Ambassador Cruise",
-  "src": "https://ambassadorcruise.com/journeys/hanoi-ha-long-overnight-escape-3d/"
+  "imgs": [
+   {
+    "t": "https://ambassadorcruise.com/wp-content/uploads/2026/08/ambassador-overnight-escape-3d2n-alt2.webp",
+    "u": "https://ambassadorcruise.com/wp-content/uploads/2026/08/ambassador-overnight-escape-3d2n-alt2.webp",
+    "c": "Photo: Ambassador Cruise",
+    "s": "https://ambassadorcruise.com/journeys/hanoi-ha-long-overnight-escape-3d/"
+   }
+  ]
  },
  {
   "sec": "Sa Pa",
   "kind": "do",
   "title": "HK Buslines cabin bus",
   "sub": "Days 5 and 9 · your own cabin to Sa Pa and back",
-  "img": "https://a21tours.s3.ap-southeast-1.amazonaws.com/images/double.webp",
-  "credit": "Photo via A21 Tours",
-  "src": "https://a21tours.com/ticket/hk-open-bus-hanoi-sapa-cabin-bus"
+  "imgs": [
+   {
+    "t": "https://a21tours.s3.ap-southeast-1.amazonaws.com/images/double.webp",
+    "u": "https://a21tours.s3.ap-southeast-1.amazonaws.com/images/double.webp",
+    "c": "Photo via A21 Tours",
+    "s": "https://a21tours.com/ticket/hk-open-bus-hanoi-sapa-cabin-bus"
+   },
+   {
+    "t": "https://a21tours.s3.ap-southeast-1.amazonaws.com/images/Facilities.webp",
+    "u": "https://a21tours.s3.ap-southeast-1.amazonaws.com/images/Facilities.webp",
+    "c": "Photo via A21 Tours",
+    "s": "https://a21tours.com/ticket/hk-open-bus-hanoi-sapa-cabin-bus"
+   }
+  ]
  },
  {
   "sec": "Sa Pa",
   "kind": "stay",
   "title": "Sapa Jade Hill Resort & Spa",
-  "sub": "Nights 5–8 · bungalows above the Mường Hoa valley",
-  "img": "https://sapajadehillresort.com/wp-content/uploads/2025/10/banner_resort.jpg",
-  "credit": "Photo: Sapa Jade Hill Resort",
-  "src": "https://sapajadehillresort.com/resort-en/"
- },
- {
-  "sec": "Sa Pa",
-  "kind": "stay",
-  "title": "Your Panorama View Bungalow",
-  "sub": "Breakfast with a view of the valley",
-  "img": "https://sapajadehillresort.com/wp-content/uploads/2025/07/Ban-cong1-min.jpg",
-  "credit": "Photo: Sapa Jade Hill Resort",
-  "src": "https://sapajadehillresort.com/resort-en/"
+  "sub": "Nights 5–8 · Panorama View Bungalow above the valley",
+  "imgs": [
+   {
+    "t": "https://sapajadehillresort.com/wp-content/uploads/2025/10/banner_resort.jpg",
+    "u": "https://sapajadehillresort.com/wp-content/uploads/2025/10/banner_resort.jpg",
+    "c": "Photo: Sapa Jade Hill Resort",
+    "s": "https://sapajadehillresort.com/resort-en/"
+   },
+   {
+    "t": "https://sapajadehillresort.com/wp-content/uploads/2025/07/Ban-cong1-min.jpg",
+    "u": "https://sapajadehillresort.com/wp-content/uploads/2025/07/Ban-cong1-min.jpg",
+    "c": "Photo: Sapa Jade Hill Resort",
+    "s": "https://sapajadehillresort.com/resort-en/"
+   },
+   {
+    "t": "https://sapajadehillresort.com/wp-content/uploads/2025/07/bungalow-flycam6_optimized.jpg",
+    "u": "https://sapajadehillresort.com/wp-content/uploads/2025/07/bungalow-flycam6_optimized.jpg",
+    "c": "Photo: Sapa Jade Hill Resort",
+    "s": "https://sapajadehillresort.com/resort-en/"
+   },
+   {
+    "t": "https://sapajadehillresort.com/wp-content/uploads/2025/10/VUX_6628.jpg",
+    "u": "https://sapajadehillresort.com/wp-content/uploads/2025/10/VUX_6628.jpg",
+    "c": "Photo: Sapa Jade Hill Resort",
+    "s": "https://sapajadehillresort.com/resort-en/"
+   }
+  ]
  },
  {
   "sec": "Sa Pa",
   "kind": "see",
-  "title": "Morning mist over the resort",
-  "sub": "Sa Pa in November",
-  "img": "https://sapajadehillresort.com/wp-content/uploads/2025/07/bungalow-flycam6_optimized.jpg",
-  "credit": "Photo: Sapa Jade Hill Resort",
-  "src": "https://sapajadehillresort.com/resort-en/"
+  "title": "The rice terraces of the Mường Hoa valley",
+  "sub": "Days 5–9 · the view from the resort",
+  "imgs": [
+   {
+    "t": "https://images.pexels.com/photos/6872795/pexels-photo-6872795.jpeg?auto=compress&cs=tinysrgb&w=800",
+    "u": "https://images.pexels.com/photos/6872795/pexels-photo-6872795.jpeg?auto=compress&cs=tinysrgb&w=1800",
+    "c": "Pexels",
+    "s": "https://www.pexels.com/photo/6872795/"
+   },
+   {
+    "t": "https://images.pexels.com/photos/6713725/pexels-photo-6713725.jpeg?auto=compress&cs=tinysrgb&w=800",
+    "u": "https://images.pexels.com/photos/6713725/pexels-photo-6713725.jpeg?auto=compress&cs=tinysrgb&w=1800",
+    "c": "Pexels",
+    "s": "https://www.pexels.com/photo/6713725/"
+   },
+   {
+    "t": "https://images.pexels.com/photos/9761821/pexels-photo-9761821.jpeg?auto=compress&cs=tinysrgb&w=800",
+    "u": "https://images.pexels.com/photos/9761821/pexels-photo-9761821.jpeg?auto=compress&cs=tinysrgb&w=1800",
+    "c": "Pexels",
+    "s": "https://www.pexels.com/photo/9761821/"
+   },
+   {
+    "t": "https://images.pexels.com/photos/6876424/pexels-photo-6876424.jpeg?auto=compress&cs=tinysrgb&w=800",
+    "u": "https://images.pexels.com/photos/6876424/pexels-photo-6876424.jpeg?auto=compress&cs=tinysrgb&w=1800",
+    "c": "Pexels",
+    "s": "https://www.pexels.com/photo/6876424/"
+   }
+  ]
  },
  {
   "sec": "Sa Pa",
   "kind": "do",
   "title": "Cat Cat Village",
   "sub": "Day 5 · walk down into the valley",
-  "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/Water_wheel_in_Cat_Cat_village%2C_Sa_Pa%2C_Vietnam%2C_20240126_1142_3546.jpg/1280px-Water_wheel_in_Cat_Cat_village%2C_Sa_Pa%2C_Vietnam%2C_20240126_1142_3546.jpg",
-  "credit": "Jakub Hałun, CC BY 4.0",
-  "src": "https://commons.wikimedia.org/wiki/File:Water_wheel_in_Cat_Cat_village,_Sa_Pa,_Vietnam,_20240126_1142_3546.jpg"
+  "imgs": [
+   {
+    "t": "https://images.pexels.com/photos/235925/pexels-photo-235925.jpeg?auto=compress&cs=tinysrgb&w=800",
+    "u": "https://images.pexels.com/photos/235925/pexels-photo-235925.jpeg?auto=compress&cs=tinysrgb&w=1800",
+    "c": "Pexels",
+    "s": "https://www.pexels.com/photo/235925/"
+   },
+   {
+    "t": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/Water_wheel_in_Cat_Cat_village%2C_Sa_Pa%2C_Vietnam%2C_20240126_1142_3546.jpg/960px-Water_wheel_in_Cat_Cat_village%2C_Sa_Pa%2C_Vietnam%2C_20240126_1142_3546.jpg",
+    "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/Water_wheel_in_Cat_Cat_village%2C_Sa_Pa%2C_Vietnam%2C_20240126_1142_3546.jpg/1280px-Water_wheel_in_Cat_Cat_village%2C_Sa_Pa%2C_Vietnam%2C_20240126_1142_3546.jpg",
+    "c": "Jakub Hałun, CC BY 4.0 · Wikimedia",
+    "s": "https://commons.wikimedia.org/wiki/File:Water_wheel_in_Cat_Cat_village,_Sa_Pa,_Vietnam,_20240126_1142_3546.jpg"
+   }
+  ]
  },
  {
   "sec": "Sa Pa",
   "kind": "do",
-  "title": "Paragliding over the Mường Hoa valley",
-  "sub": "Day 6 · the terraces you fly over",
-  "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/M%C6%B0%E1%BB%9Dng_Hoa_Valley_11.jpg/1280px-M%C6%B0%E1%BB%9Dng_Hoa_Valley_11.jpg",
-  "credit": "Christophe95, CC BY-SA 4.0",
-  "src": "https://commons.wikimedia.org/wiki/File:M%C6%B0%E1%BB%9Dng_Hoa_Valley_11.jpg"
+  "title": "Paragliding",
+  "sub": "Day 6 · over the valley (example photos)",
+  "imgs": [
+   {
+    "t": "https://images.pexels.com/photos/5015435/pexels-photo-5015435.jpeg?auto=compress&cs=tinysrgb&w=800",
+    "u": "https://images.pexels.com/photos/5015435/pexels-photo-5015435.jpeg?auto=compress&cs=tinysrgb&w=1800",
+    "c": "Pexels",
+    "s": "https://www.pexels.com/photo/5015435/"
+   },
+   {
+    "t": "https://images.pexels.com/photos/14760650/pexels-photo-14760650.jpeg?auto=compress&cs=tinysrgb&w=800",
+    "u": "https://images.pexels.com/photos/14760650/pexels-photo-14760650.jpeg?auto=compress&cs=tinysrgb&w=1800",
+    "c": "Pexels",
+    "s": "https://www.pexels.com/photo/14760650/"
+   }
+  ]
  },
  {
   "sec": "Sa Pa",
   "kind": "see",
-  "title": "O Quy Ho Pass",
-  "sub": "Day 7 · on the way to the Rong May Glass Bridge",
-  "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/O_Quy_Ho_pass.jpg/1280px-O_Quy_Ho_pass.jpg",
-  "credit": "Kiếm Anh, CC BY-SA 4.0",
-  "src": "https://commons.wikimedia.org/wiki/File:O_Quy_Ho_pass.jpg"
+  "title": "Over the O Quy Ho Pass to Rong May",
+  "sub": "Day 7 · mountain roads above the clouds",
+  "imgs": [
+   {
+    "t": "https://images.pexels.com/photos/29535875/pexels-photo-29535875.jpeg?auto=compress&cs=tinysrgb&w=800",
+    "u": "https://images.pexels.com/photos/29535875/pexels-photo-29535875.jpeg?auto=compress&cs=tinysrgb&w=1800",
+    "c": "Pexels",
+    "s": "https://www.pexels.com/photo/29535875/"
+   },
+   {
+    "t": "https://images.pexels.com/photos/14010987/pexels-photo-14010987.jpeg?auto=compress&cs=tinysrgb&w=800",
+    "u": "https://images.pexels.com/photos/14010987/pexels-photo-14010987.jpeg?auto=compress&cs=tinysrgb&w=1800",
+    "c": "Pexels",
+    "s": "https://www.pexels.com/photo/14010987/"
+   },
+   {
+    "t": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/O_Quy_Ho_pass.jpg/960px-O_Quy_Ho_pass.jpg",
+    "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/O_Quy_Ho_pass.jpg/1280px-O_Quy_Ho_pass.jpg",
+    "c": "Kiếm Anh, CC BY-SA 4.0 · Wikimedia",
+    "s": "https://commons.wikimedia.org/wiki/File:O_Quy_Ho_pass.jpg"
+   }
+  ]
  },
  {
   "sec": "Sa Pa",
   "kind": "do",
-  "title": "Fansipan cable car",
-  "sub": "Day 8 · up to the roof of Indochina",
-  "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Fansipan_Cable_Car.jpg/1280px-Fansipan_Cable_Car.jpg",
-  "credit": "Christophe95, CC BY-SA 4.0",
-  "src": "https://commons.wikimedia.org/wiki/File:Fansipan_Cable_Car.jpg"
+  "title": "Fansipan, the roof of Indochina",
+  "sub": "Day 8 · cable car to 3,143 m",
+  "imgs": [
+   {
+    "t": "https://images.pexels.com/photos/29458641/pexels-photo-29458641.jpeg?auto=compress&cs=tinysrgb&w=800",
+    "u": "https://images.pexels.com/photos/29458641/pexels-photo-29458641.jpeg?auto=compress&cs=tinysrgb&w=1800",
+    "c": "Pexels",
+    "s": "https://www.pexels.com/photo/29458641/"
+   },
+   {
+    "t": "https://images.pexels.com/photos/28747658/pexels-photo-28747658.jpeg?auto=compress&cs=tinysrgb&w=800",
+    "u": "https://images.pexels.com/photos/28747658/pexels-photo-28747658.jpeg?auto=compress&cs=tinysrgb&w=1800",
+    "c": "Pexels",
+    "s": "https://www.pexels.com/photo/28747658/"
+   },
+   {
+    "t": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Fansipan_Cable_Car.jpg/960px-Fansipan_Cable_Car.jpg",
+    "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Fansipan_Cable_Car.jpg/1280px-Fansipan_Cable_Car.jpg",
+    "c": "Christophe95, CC BY-SA 4.0 · Wikimedia",
+    "s": "https://commons.wikimedia.org/wiki/File:Fansipan_Cable_Car.jpg"
+   }
+  ]
+ },
+ {
+  "sec": "Sa Pa",
+  "kind": "see",
+  "title": "Sa Pa town and the mountains",
+  "sub": "Day 9 · the stone church, viewpoints and mist",
+  "imgs": [
+   {
+    "t": "https://images.pexels.com/photos/16879020/pexels-photo-16879020.jpeg?auto=compress&cs=tinysrgb&w=800",
+    "u": "https://images.pexels.com/photos/16879020/pexels-photo-16879020.jpeg?auto=compress&cs=tinysrgb&w=1800",
+    "c": "Pexels",
+    "s": "https://www.pexels.com/photo/16879020/"
+   },
+   {
+    "t": "https://images.pexels.com/photos/25243294/pexels-photo-25243294.jpeg?auto=compress&cs=tinysrgb&w=800",
+    "u": "https://images.pexels.com/photos/25243294/pexels-photo-25243294.jpeg?auto=compress&cs=tinysrgb&w=1800",
+    "c": "Pexels",
+    "s": "https://www.pexels.com/photo/25243294/"
+   },
+   {
+    "t": "https://images.pexels.com/photos/2175952/pexels-photo-2175952.jpeg?auto=compress&cs=tinysrgb&w=800",
+    "u": "https://images.pexels.com/photos/2175952/pexels-photo-2175952.jpeg?auto=compress&cs=tinysrgb&w=1800",
+    "c": "Pexels",
+    "s": "https://www.pexels.com/photo/2175952/"
+   }
+  ]
  },
  {
   "sec": "Phu Quoc",
   "kind": "stay",
   "title": "Phu Quoc Valley Sen Bungalow",
   "sub": "Nights 10–13 · pools in a tropical garden",
-  "img": "https://img.easemytrip.com/EMTHOTEL-1523406/8/g/l/4158720_30.jpg",
-  "credit": "Photo via EaseMyTrip",
-  "src": "https://www.easemytrip.com/hotels/phu-quoc-valley-sen-bungalow-1523406/"
- },
- {
-  "sec": "Phu Quoc",
-  "kind": "stay",
-  "title": "Your bungalow",
-  "sub": "Wooden bungalow, garden view",
-  "img": "https://img.easemytrip.com/EMTHOTEL-1523406/8/g/l/4158720_35.jpg",
-  "credit": "Photo via EaseMyTrip",
-  "src": "https://www.easemytrip.com/hotels/phu-quoc-valley-sen-bungalow-1523406/"
+  "imgs": [
+   {
+    "t": "https://img.easemytrip.com/EMTHOTEL-1523406/8/g/l/4158720_30.jpg",
+    "u": "https://img.easemytrip.com/EMTHOTEL-1523406/8/g/l/4158720_30.jpg",
+    "c": "Photo via EaseMyTrip",
+    "s": "https://www.easemytrip.com/hotels/phu-quoc-valley-sen-bungalow-1523406/"
+   },
+   {
+    "t": "https://img.easemytrip.com/EMTHOTEL-1523406/8/g/l/4158720_29.jpg",
+    "u": "https://img.easemytrip.com/EMTHOTEL-1523406/8/g/l/4158720_29.jpg",
+    "c": "Photo via EaseMyTrip",
+    "s": "https://www.easemytrip.com/hotels/phu-quoc-valley-sen-bungalow-1523406/"
+   },
+   {
+    "t": "https://img.easemytrip.com/EMTHOTEL-1523406/8/g/l/4158720_33.jpg",
+    "u": "https://img.easemytrip.com/EMTHOTEL-1523406/8/g/l/4158720_33.jpg",
+    "c": "Photo via EaseMyTrip",
+    "s": "https://www.easemytrip.com/hotels/phu-quoc-valley-sen-bungalow-1523406/"
+   },
+   {
+    "t": "https://img.easemytrip.com/EMTHOTEL-1523406/8/g/l/4158720_35.jpg",
+    "u": "https://img.easemytrip.com/EMTHOTEL-1523406/8/g/l/4158720_35.jpg",
+    "c": "Photo via EaseMyTrip",
+    "s": "https://www.easemytrip.com/hotels/phu-quoc-valley-sen-bungalow-1523406/"
+   },
+   {
+    "t": "https://img.easemytrip.com/EMTHOTEL-1523406/8/g/l/4158720_34.jpg",
+    "u": "https://img.easemytrip.com/EMTHOTEL-1523406/8/g/l/4158720_34.jpg",
+    "c": "Photo via EaseMyTrip",
+    "s": "https://www.easemytrip.com/hotels/phu-quoc-valley-sen-bungalow-1523406/"
+   }
+  ]
  },
  {
   "sec": "Phu Quoc",
   "kind": "see",
   "title": "Sao Beach",
   "sub": "Day 10 · white sand in the south-east",
-  "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/Bai-sao-phu-quoc-tuonglamphotos.jpg/1280px-Bai-sao-phu-quoc-tuonglamphotos.jpg",
-  "credit": "Trantuonglam, CC BY-SA 4.0",
-  "src": "https://commons.wikimedia.org/wiki/File:Bai-sao-phu-quoc-tuonglamphotos.jpg"
- },
- {
-  "sec": "Phu Quoc",
-  "kind": "see",
-  "title": "Sunsets on Long Beach",
-  "sub": "Days 11–13 · Rory's and Ocsen are on this coast",
-  "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4f/Sunset_on_the_Long_Beach_in_Phu_Quoc_Island%2C_Vietnam%2C_5_March_2019.jpg/1280px-Sunset_on_the_Long_Beach_in_Phu_Quoc_Island%2C_Vietnam%2C_5_March_2019.jpg",
-  "credit": "Alexey Komarov, CC BY-SA 4.0",
-  "src": "https://commons.wikimedia.org/wiki/File:Sunset_on_the_Long_Beach_in_Phu_Quoc_Island,_Vietnam,_5_March_2019.jpg"
+  "imgs": [
+   {
+    "t": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/Bai-sao-phu-quoc-tuonglamphotos.jpg/960px-Bai-sao-phu-quoc-tuonglamphotos.jpg",
+    "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/Bai-sao-phu-quoc-tuonglamphotos.jpg/1920px-Bai-sao-phu-quoc-tuonglamphotos.jpg",
+    "c": "Trantuonglam, CC BY-SA 4.0 · Wikimedia",
+    "s": "https://commons.wikimedia.org/wiki/File:Bai-sao-phu-quoc-tuonglamphotos.jpg"
+   },
+   {
+    "t": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Bai_Sao%2C_Ph%C3%BA_Qu%E1%BB%91c%2C_Vietnam_%283870300491%29.jpg/960px-Bai_Sao%2C_Ph%C3%BA_Qu%E1%BB%91c%2C_Vietnam_%283870300491%29.jpg",
+    "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Bai_Sao%2C_Ph%C3%BA_Qu%E1%BB%91c%2C_Vietnam_%283870300491%29.jpg/1920px-Bai_Sao%2C_Ph%C3%BA_Qu%E1%BB%91c%2C_Vietnam_%283870300491%29.jpg",
+    "c": "Dan Searle, CC BY-SA 2.0 · Wikimedia",
+    "s": "https://commons.wikimedia.org/wiki/File:Bai_Sao,_Ph%C3%BA_Qu%E1%BB%91c,_Vietnam_(3870300491).jpg"
+   }
+  ]
  },
  {
   "sec": "Phu Quoc",
   "kind": "do",
-  "title": "Hon Thom cable car",
-  "sub": "Day 12 · over the sea to Thom Island",
-  "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Hon_Thom_Cable_Car_aerial_view_Phu_Quoc_Island_Vietnam.jpg/1280px-Hon_Thom_Cable_Car_aerial_view_Phu_Quoc_Island_Vietnam.jpg",
-  "credit": "Vivu Vietnam, CC BY-SA 4.0",
-  "src": "https://commons.wikimedia.org/wiki/File:Hon_Thom_Cable_Car_aerial_view_Phu_Quoc_Island_Vietnam.jpg"
+  "title": "Dương Đông town and market",
+  "sub": "Day 11 · the river harbour and Dinh Cậu temple",
+  "imgs": [
+   {
+    "t": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/R%E1%BA%A1ch_D%C6%B0%C6%A1ng_D%C3%B3ng.jpg/960px-R%E1%BA%A1ch_D%C6%B0%C6%A1ng_D%C3%B3ng.jpg",
+    "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/R%E1%BA%A1ch_D%C6%B0%C6%A1ng_D%C3%B3ng.jpg/1920px-R%E1%BA%A1ch_D%C6%B0%C6%A1ng_D%C3%B3ng.jpg",
+    "c": "Vano111ru, CC BY-SA 4.0 · Wikimedia",
+    "s": "https://commons.wikimedia.org/wiki/File:R%E1%BA%A1ch_D%C6%B0%C6%A1ng_D%C3%B3ng.jpg"
+   },
+   {
+    "t": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/M%C5%A9i_Dinh_C%E1%BA%ADu%2C_Phu_Quoc%2C_Kien_Giang_-_panoramio.jpg/960px-M%C5%A9i_Dinh_C%E1%BA%ADu%2C_Phu_Quoc%2C_Kien_Giang_-_panoramio.jpg",
+    "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/M%C5%A9i_Dinh_C%E1%BA%ADu%2C_Phu_Quoc%2C_Kien_Giang_-_panoramio.jpg/1920px-M%C5%A9i_Dinh_C%E1%BA%ADu%2C_Phu_Quoc%2C_Kien_Giang_-_panoramio.jpg",
+    "c": "trungydang, CC BY 3.0 · Wikimedia",
+    "s": "https://commons.wikimedia.org/wiki/File:M%C5%A9i_Dinh_C%E1%BA%ADu,_Phu_Quoc,_Kien_Giang_-_panoramio.jpg"
+   }
+  ]
+ },
+ {
+  "sec": "Phu Quoc",
+  "kind": "see",
+  "title": "Sunsets on the west coast",
+  "sub": "Days 11–13 · Rory's and Ocsen are on this coast",
+  "imgs": [
+   {
+    "t": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/1_Phu_Quoc_sunset.jpg/960px-1_Phu_Quoc_sunset.jpg",
+    "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/1_Phu_Quoc_sunset.jpg/1920px-1_Phu_Quoc_sunset.jpg",
+    "c": "Elmschrat, CC0 · Wikimedia",
+    "s": "https://commons.wikimedia.org/wiki/File:1_Phu_Quoc_sunset.jpg"
+   },
+   {
+    "t": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4f/Sunset_on_the_Long_Beach_in_Phu_Quoc_Island%2C_Vietnam%2C_5_March_2019.jpg/960px-Sunset_on_the_Long_Beach_in_Phu_Quoc_Island%2C_Vietnam%2C_5_March_2019.jpg",
+    "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4f/Sunset_on_the_Long_Beach_in_Phu_Quoc_Island%2C_Vietnam%2C_5_March_2019.jpg/1280px-Sunset_on_the_Long_Beach_in_Phu_Quoc_Island%2C_Vietnam%2C_5_March_2019.jpg",
+    "c": "Alexey Komarov, CC BY-SA 4.0 · Wikimedia",
+    "s": "https://commons.wikimedia.org/wiki/File:Sunset_on_the_Long_Beach_in_Phu_Quoc_Island,_Vietnam,_5_March_2019.jpg"
+   }
+  ]
+ },
+ {
+  "sec": "Phu Quoc",
+  "kind": "do",
+  "title": "Hon Thom cable car and Sunset Town",
+  "sub": "Day 12 · over the sea to Thom Island; the Kiss Bridge is next to the station",
+  "imgs": [
+   {
+    "t": "https://images.pexels.com/photos/26742975/pexels-photo-26742975.jpeg?auto=compress&cs=tinysrgb&w=800",
+    "u": "https://images.pexels.com/photos/26742975/pexels-photo-26742975.jpeg?auto=compress&cs=tinysrgb&w=1800",
+    "c": "Pexels",
+    "s": "https://www.pexels.com/photo/26742975/"
+   },
+   {
+    "t": "https://images.pexels.com/photos/26742974/pexels-photo-26742974.jpeg?auto=compress&cs=tinysrgb&w=800",
+    "u": "https://images.pexels.com/photos/26742974/pexels-photo-26742974.jpeg?auto=compress&cs=tinysrgb&w=1800",
+    "c": "Pexels",
+    "s": "https://www.pexels.com/photo/26742974/"
+   },
+   {
+    "t": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Kiss_Bridge_sunset_silhouette_crowd_Phu_Quoc_Island_Vietnam.jpg/960px-Kiss_Bridge_sunset_silhouette_crowd_Phu_Quoc_Island_Vietnam.jpg",
+    "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Kiss_Bridge_sunset_silhouette_crowd_Phu_Quoc_Island_Vietnam.jpg/1920px-Kiss_Bridge_sunset_silhouette_crowd_Phu_Quoc_Island_Vietnam.jpg",
+    "c": "Vivu Vietnam, CC BY-SA 4.0 · Wikimedia",
+    "s": "https://commons.wikimedia.org/wiki/File:Kiss_Bridge_sunset_silhouette_crowd_Phu_Quoc_Island_Vietnam.jpg"
+   },
+   {
+    "t": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Kiss_Bridge_at_sunset_Phu_Quoc_Island_Vietnam.jpg/960px-Kiss_Bridge_at_sunset_Phu_Quoc_Island_Vietnam.jpg",
+    "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Kiss_Bridge_at_sunset_Phu_Quoc_Island_Vietnam.jpg/1920px-Kiss_Bridge_at_sunset_Phu_Quoc_Island_Vietnam.jpg",
+    "c": "Vivu Vietnam, CC BY-SA 4.0 · Wikimedia",
+    "s": "https://commons.wikimedia.org/wiki/File:Kiss_Bridge_at_sunset_Phu_Quoc_Island_Vietnam.jpg"
+   }
+  ]
  },
  {
   "sec": "Phu Quoc",
   "kind": "see",
   "title": "Grand World",
-  "sub": "Day 14 · the canals and lights",
-  "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/2023-07-30_Grand_World_Ph%C3%BA_Qu%E1%BB%91c_DSCF2045.jpg/1280px-2023-07-30_Grand_World_Ph%C3%BA_Qu%E1%BB%91c_DSCF2045.jpg",
-  "credit": "松岡明芳, CC BY-SA 4.0",
-  "src": "https://commons.wikimedia.org/wiki/File:2023-07-30_Grand_World_Ph%C3%BA_Qu%E1%BB%91c_DSCF2045.jpg"
+  "sub": "Day 14 · canals, gondolas and lights",
+  "imgs": [
+   {
+    "t": "https://images.pexels.com/photos/16429265/pexels-photo-16429265.jpeg?auto=compress&cs=tinysrgb&w=800",
+    "u": "https://images.pexels.com/photos/16429265/pexels-photo-16429265.jpeg?auto=compress&cs=tinysrgb&w=1800",
+    "c": "Pexels",
+    "s": "https://www.pexels.com/photo/16429265/"
+   },
+   {
+    "t": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/2023-07-30_Grand_World_Ph%C3%BA_Qu%E1%BB%91c_DSCF2045.jpg/960px-2023-07-30_Grand_World_Ph%C3%BA_Qu%E1%BB%91c_DSCF2045.jpg",
+    "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/2023-07-30_Grand_World_Ph%C3%BA_Qu%E1%BB%91c_DSCF2045.jpg/1920px-2023-07-30_Grand_World_Ph%C3%BA_Qu%E1%BB%91c_DSCF2045.jpg",
+    "c": "松岡明芳, CC BY-SA 4.0 · Wikimedia",
+    "s": "https://commons.wikimedia.org/wiki/File:2023-07-30_Grand_World_Ph%C3%BA_Qu%E1%BB%91c_DSCF2045.jpg"
+   },
+   {
+    "t": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/2023-07-30_Grand_World_Ph%C3%BA_Qu%E1%BB%91c_DSCF2048.jpg/960px-2023-07-30_Grand_World_Ph%C3%BA_Qu%E1%BB%91c_DSCF2048.jpg",
+    "u": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/2023-07-30_Grand_World_Ph%C3%BA_Qu%E1%BB%91c_DSCF2048.jpg/1920px-2023-07-30_Grand_World_Ph%C3%BA_Qu%E1%BB%91c_DSCF2048.jpg",
+    "c": "松岡明芳, CC BY-SA 4.0 · Wikimedia",
+    "s": "https://commons.wikimedia.org/wiki/File:2023-07-30_Grand_World_Ph%C3%BA_Qu%E1%BB%91c_DSCF2048.jpg"
+   }
+  ]
  }
 ];
 
@@ -2287,16 +2711,19 @@
       var secs = [];
       GALLERY.forEach(function (g, i) { g.i = i; if (secs.indexOf(g.sec) < 0) secs.push(g.sec); });
       list.innerHTML = secs.map(function (sec) {
-        return '<section class="gl-sec" data-sec="' + esc(sec) + '"><div class="gl-sec-head"><i class="jr-dot" style="--c: var(--loc-' + LOC[sec] + ')"></i><h3>' + esc(sec) + '</h3></div><div class="gl-grid">' +
+        return '<section class="gl-sec"><div class="gl-sec-head"><i class="jr-dot" style="--c: var(--loc-' + LOC[sec] + ')"></i><h3>' + esc(sec) + '</h3></div><div class="gl-grid">' +
           GALLERY.filter(function (g) { return g.sec === sec; }).map(function (g) {
-            return '<figure class="gl-card" data-kind="' + g.kind + '"><button type="button" class="gl-open" data-i="' + g.i + '" aria-label="Open photo: ' + esc(g.title) + '">' +
-              '<img src="' + g.img + '" alt="' + esc(g.title) + '" loading="lazy" referrerpolicy="no-referrer"></button>' +
-              '<figcaption><span class="gl-kind ' + g.kind + '">' + KIND[g.kind] + '</span><span class="gl-title">' + esc(g.title) + '</span><span class="gl-sub">' + esc(g.sub) + '</span>' +
-              '<span class="gl-credit"><a href="' + g.src + '" target="_blank" rel="noopener">' + esc(g.credit) + '</a></span></figcaption></figure>';
+            var n = g.imgs.length, im = g.imgs[0];
+            var strip = n > 1 ? '<span class="gl-strip">' + g.imgs.slice(1, 4).map(function (x, k) {
+              return '<button type="button" class="gl-thumb" data-i="' + g.i + '" data-k="' + (k + 1) + '" aria-label="Photo ' + (k + 2) + ' of ' + esc(g.title) + '"><img src="' + x.t + '" alt="" loading="lazy" referrerpolicy="no-referrer"></button>';
+            }).join('') + '</span>' : '';
+            return '<figure class="gl-card" data-kind="' + g.kind + '"><div class="gl-media"><button type="button" class="gl-open" data-i="' + g.i + '" data-k="0" aria-label="Open photos: ' + esc(g.title) + '">' +
+              '<img src="' + im.t + '" alt="' + esc(g.title) + '" loading="lazy" referrerpolicy="no-referrer"></button>' +
+              (n > 1 ? '<span class="gl-count">' + n + ' photos</span>' : '') + strip + '</div>' +
+              '<figcaption><span class="gl-kind ' + g.kind + '">' + KIND[g.kind] + '</span><span class="gl-title">' + esc(g.title) + '</span><span class="gl-sub">' + esc(g.sub) + '</span></figcaption></figure>';
           }).join('') + '</div></section>';
       }).join('');
 
-      // Filters
       var fbtns = document.querySelectorAll('.gl-filters button');
       fbtns.forEach(function (b) {
         b.addEventListener('click', function () {
@@ -2307,21 +2734,32 @@
         });
       });
 
-      // Lightbox
+      // Lightbox: browse an item's photos; past the last photo it continues to the next item
       var lb = document.getElementById('gl-lightbox'), lbImg = lb.querySelector('img');
       var lbTitle = lb.querySelector('.gl-title'), lbSub = lb.querySelector('.gl-sub');
-      var cur = 0, lastFocus = null;
+      var lbDots = lb.querySelector('.gl-dots'), lbCredit = lb.querySelector('.gl-lb-credit');
+      var cur = 0, ck = 0, lastFocus = null;
       function visible() { return [].map.call(list.querySelectorAll('.gl-card:not([hidden]) .gl-open'), function (b) { return +b.dataset.i; }); }
-      function openAt(i) {
-        cur = i; var g = GALLERY[i];
-        lbImg.src = g.img; lbImg.alt = g.title; lbTitle.textContent = g.title; lbSub.textContent = g.sub + ' · ' + g.credit;
-        lb.hidden = false; lb.querySelector('.gl-lb-close').focus();
+      function openAt(i, k) {
+        cur = i; ck = k; var g = GALLERY[i], im = g.imgs[k];
+        lbImg.src = im.u; lbImg.alt = g.title + ' (' + (k + 1) + ' of ' + g.imgs.length + ')';
+        lbTitle.textContent = g.title; lbSub.textContent = g.sub;
+        lbCredit.innerHTML = '<a href="' + im.s + '" target="_blank" rel="noopener">' + esc(im.c) + '</a>';
+        lbDots.innerHTML = g.imgs.length > 1 ? g.imgs.map(function (x, j) { return '<i' + (j === k ? ' class="on"' : '') + '></i>'; }).join('') : '';
+        // Preload the next photo of this item
+        if (g.imgs[k + 1]) { var pre = new Image(); pre.referrerPolicy = 'no-referrer'; pre.src = g.imgs[k + 1].u; }
+        if (lb.hidden) { lb.hidden = false; lb.querySelector('.gl-lb-close').focus(); }
       }
-      function step(d) { var v = visible(), k = v.indexOf(cur); openAt(v[(k + d + v.length) % v.length]); }
+      function step(d) {
+        var g = GALLERY[cur], k = ck + d;
+        if (k >= 0 && k < g.imgs.length) return openAt(cur, k);
+        var v = visible(), p = v.indexOf(cur), ni = v[(p + d + v.length) % v.length];
+        openAt(ni, d > 0 ? 0 : GALLERY[ni].imgs.length - 1);
+      }
       function close() { lb.hidden = true; lbImg.src = ''; if (lastFocus) lastFocus.focus(); }
       list.addEventListener('click', function (e) {
-        var b = e.target.closest('.gl-open'); if (!b) return;
-        lastFocus = b; openAt(+b.dataset.i);
+        var b = e.target.closest('.gl-open, .gl-thumb'); if (!b) return;
+        lastFocus = b; openAt(+b.dataset.i, +b.dataset.k);
       });
       lb.querySelector('.gl-lb-close').addEventListener('click', close);
       lb.querySelector('.gl-lb-prev').addEventListener('click', function () { step(-1); });
