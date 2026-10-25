@@ -937,6 +937,7 @@
   .jr-title { display: block; font-weight: 600; font-size: 1rem; margin: 2px 0 4px; cursor: pointer; }
   .jr-text { font-size: 0.92rem; line-height: 1.6; margin: 0; }
   .jr-text strong { color: var(--text); }
+  .jr-text a { color: var(--accent-gold); text-decoration: none; border-bottom: 1px solid rgba(211, 167, 92, 0.35); }
   .jr-tip { font-size: 0.85rem; color: var(--text-muted); margin-top: 8px; padding-left: 10px; border-left: 2px solid var(--rail-line); }
   .jr-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 9px; }
   .jr-chip { font-size: 0.75rem; padding: 3px 10px; border-radius: 999px; background: var(--surface-alt); border: 1px solid var(--border); color: var(--text-muted); }
@@ -2807,10 +2808,11 @@
       { id: 'pre-valley', day: 0, title: 'Message Valley Sen Bungalow', text: 'Ask them to hold your bags when you arrive around 1pm on Nov 8, and to keep your luggage on Nov 12 until you leave for the 18:40 flight.' },
       { id: 'pre-para', day: 0, title: 'Book paragliding for Nov 4', text: 'Book directly with a local operator (FlySapa, paraglidingsapa.com or Sapa Paragliding). Ask for hotel pickup at Sapa Jade Hill and free rescheduling for bad weather (Nov 5–7 as backups).' },
       { id: 'pre-westlake', day: 0, title: 'Book the last night in Hanoi (Nov 12)', text: 'Westlake House by Jen is shortlisted. You land at 20:45, so confirm a late check-in around 21:30–22:00.' },
+      { id: 'pre-arrival', day: 0, title: 'Fill in the pre-arrival declaration (each of you)', text: 'Free, only on the official site <a href="https://prearrival.immigration.gov.vn" target="_blank" rel="noopener">prearrival.immigration.gov.vn</a>, at most 72 hours before landing: from about <strong>Oct 27</strong>, ideally the day before you fly. Use Silk Path Boutique Hanoi as your first address. Save the <strong>QR code</strong> for immigration at Noi Bai.', tip: 'Ignore copycat sites that charge a fee. It does not replace a visa; you still enter visa-free for 45 days.' },
       { id: 'pre-docs', day: 0, title: 'Passport and documents', text: 'Passport valid for at least 6 months. No visa needed: Belgians get 45 days visa-free. Save all booking confirmations offline on your phone.' },
 
       // Day 1
-      { id: 'd1-land', day: 1, time: '11:50', title: 'Land at Noi Bai, Hanoi', text: 'Switch on the eSIM for data. Go through immigration (passport, visa-free) and collect your bags. This usually takes 45–90 minutes.', chips: ['Passport'] },
+      { id: 'd1-land', day: 1, time: '11:50', title: 'Land at Noi Bai, Hanoi', text: 'Switch on the eSIM for data. Go through immigration (passport, visa-free, and the pre-arrival QR code) and collect your bags. This usually takes 45–90 minutes.', chips: ['Passport', 'Pre-arrival QR code'] },
       { id: 'd1-taxi', day: 1, time: '~12:45', title: 'Find your taxi driver in arrivals', text: 'Your Booking.com taxi driver waits with a <strong>name sign</strong>. It is about a 45–60 minute drive to the Old Quarter.', tip: 'Need cash? There are ATMs in the arrivals hall.' },
       { id: 'd1-checkin', day: 1, time: '~14:00', title: 'Check in at Silk Path Boutique Hanoi', text: 'Your first night is included in the cruise package. Ask reception to confirm tomorrow\'s <strong>8:00 cruise pickup</strong>.' },
       { id: 'd1-explore', day: 1, time: 'Afternoon', title: 'Old Quarter, The Note Coffee and Train Street', text: 'Wander the Old Quarter and have a coffee at The Note. For Train Street, ask a café there when the next train passes; the times change daily.' },
