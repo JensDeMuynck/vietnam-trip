@@ -947,6 +947,50 @@
 
   .jr-footer { margin-top: 36px; font-size: 0.8rem; color: var(--text-muted); display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
 
+
+  /* Packing tab */
+  .pk-lists { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; align-items: start; }
+  .pk-list { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 18px 20px 20px; }
+  .pk-head { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
+  .pk-head h3 { font-family: 'Fraunces', serif; font-weight: 500; font-size: 1.3rem; margin: 0; }
+  .pk-count { font-size: 0.8rem; color: var(--text-muted); }
+  .pk-bar { height: 4px; border-radius: 2px; background: var(--surface-alt); margin: 10px 0 4px; overflow: hidden; }
+  .pk-bar i { display: block; height: 100%; background: var(--exp-booked); }
+  .pk-group { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent-gold); font-weight: 600; margin: 18px 0 6px; }
+  .pk-items { list-style: none; margin: 0; padding: 0; }
+  .pk-item label { display: flex; gap: 10px; align-items: flex-start; padding: 7px 0; border-top: 1px solid var(--border); cursor: pointer; }
+  .pk-item:first-child label { border-top: 0; }
+  .pk-item input { margin-top: 3px; accent-color: var(--exp-booked); width: 16px; height: 16px; flex: none; }
+  .pk-name { display: block; font-size: 0.92rem; }
+  .pk-note { display: block; font-size: 0.78rem; color: var(--text-muted); margin-top: 1px; }
+  .pk-item.done .pk-name { text-decoration: line-through; text-decoration-color: var(--text-muted); opacity: 0.55; }
+  .pk-item.done .pk-note { opacity: 0.45; }
+  /* Weather tab */
+  .wx-status { font-size: 0.85rem; color: var(--text-muted); margin: -6px 0 22px; }
+  .wx-section-title { font-family: 'Fraunces', serif; font-weight: 500; font-size: 1.15rem; margin: 30px 0 14px; }
+  .wx-typical { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 12px; }
+  .wx-typ { background: var(--surface); border: 1px solid var(--border); border-top: 3px solid var(--loc); border-radius: 12px; padding: 12px 14px; }
+  .wx-typ-name { font-size: 0.8rem; color: var(--text-muted); }
+  .wx-typ-temp { font-size: 1.35rem; font-weight: 600; margin: 4px 0 2px; }
+  .wx-typ-temp small, .wx-temp small { font-size: 0.75em; font-weight: 400; color: var(--text-muted); }
+  .wx-typ-rain { font-size: 0.8rem; color: var(--text-muted); }
+  .wx-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px; }
+  .wx-day { background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--loc); border-radius: 12px; padding: 14px 16px 16px; }
+  .wx-day.wx-today { box-shadow: 0 0 0 2px var(--accent-gold); }
+  .wx-head { display: flex; justify-content: space-between; gap: 10px; font-size: 0.78rem; color: var(--text-muted); }
+  .wx-src { text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.68rem; }
+  .wx-place { font-family: 'Fraunces', serif; font-size: 1.15rem; margin-top: 4px; color: var(--loc); }
+  .wx-what { font-size: 0.82rem; color: var(--text-muted); margin-top: 2px; }
+  .wx-main { display: flex; align-items: baseline; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
+  .wx-icon { font-size: 1.6rem; line-height: 1; align-self: center; }
+  .wx-temp { font-size: 1.5rem; font-weight: 600; }
+  .wx-desc { font-size: 0.9rem; color: var(--text-muted); }
+  .wx-facts { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 0.82rem; margin-top: 8px; color: var(--text); }
+  .wx-note { font-size: 0.82rem; margin-top: 8px; padding-left: 10px; border-left: 2px solid var(--rail-line); color: var(--text-muted); }
+  .wx-note.wx-good { border-left-color: var(--exp-booked); color: var(--text); }
+  .wx-note.wx-warn { border-left-color: var(--accent-gold); color: var(--text); }
+  .wx-note.wx-bad { border-left-color: var(--loc-pq); color: var(--text); }
+
   @media (max-width: 560px) {
     .view-toggle { overflow-x: auto; scrollbar-width: none; }
     .view-toggle::-webkit-scrollbar { display: none; }
@@ -960,10 +1004,10 @@
     header.hero h1 { font-size: 1.9rem; }
     .stat-grid { grid-template-columns: 1fr; }
   }
-  /* Six view tabs on phones: two rows of three. Must come last to override the earlier 560px rules */
+  /* Eight view tabs on phones: two rows of four. Must come last to override the earlier 560px rules */
   @media (max-width: 560px) {
-    .view-toggle { flex-wrap: wrap; overflow: visible; border-radius: 18px; padding: 4px; max-width: 360px; }
-    .view-toggle button { flex: 1 1 30%; padding: 7px 6px; font-size: 0.78rem; }
+    .view-toggle { flex-wrap: wrap; overflow: visible; border-radius: 18px; padding: 4px; max-width: 380px; }
+    .view-toggle button { flex: 1 1 22%; padding: 7px 4px; font-size: 0.76rem; }
   }
 </style>
 </head>
@@ -986,6 +1030,8 @@
     <button type="button" data-view="expenses" aria-pressed="false">Expenses</button>
     <button type="button" data-view="journey" aria-pressed="false">Journey</button>
     <button type="button" data-view="gallery" aria-pressed="false">Gallery</button>
+    <button type="button" data-view="weather" aria-pressed="false">Weather</button>
+    <button type="button" data-view="packing" aria-pressed="false">Packing</button>
   </div>
   <div class="tour" hidden>
     <button type="button" class="tour-play">▶ Listen to the trip</button>
@@ -1335,7 +1381,7 @@
             
             <div class="field field-night">
               <span class="field-label">Night</span>
-              <span class="field-value">Hanoi (buffer night before departure). Shortlisted: <a href="https://www.booking.com/hotel/vn/westlake-house-by-jen.nl.html?checkin=2026-11-12&amp;checkout=2026-11-13&amp;group_adults=2&amp;no_rooms=1" target="_blank">Westlake House by Jen</a>, lake view room, Tây Hồ, 9.4 from 60 reviews. It's on the airport side of the city (~25–35 min to Noi Bai), with a quiet lakeside morning before the flight. <strong>Not booked yet.</strong> Book once the PQC→HAN flight is fixed, and confirm late check-in for the evening arrival.</span>
+              <span class="field-value">Hanoi (buffer night before departure) — <a href="https://www.booking.com/hotel/vn/westlake-house-by-jen.nl.html?checkin=2026-11-12&amp;checkout=2026-11-13&amp;group_adults=2&amp;no_rooms=1" target="_blank">Westlake House by Jen</a>, 1 night (Nov 12–13), €25.37 total, <strong>booked</strong> via Booking.com. Pay at the property in VND (734,377), free cancellation until Nov 10. 27 Ngõ 472 Lạc Long Quân, Tây Hồ, on the airport side of the city (~25–35 min to Noi Bai), with a quiet lakeside morning before the flight. 9.5 from 150 reviews. Late check-in at ~21:30–22:00 <strong>confirmed by the host</strong>. They offer an airport shuttle: ask the price.</span>
             </div>
           </div>
         </div>
@@ -1478,7 +1524,7 @@
         <div class="cal-loc">Phu Quoc → Hanoi</div>
         <div class="cal-move"><i class="status booked"></i>Fly PQC→HAN · 18:40</div>
         <ul class="cal-items"><li>Grand World</li></ul>
-        <div class="cal-night"><i class="status todo"></i>Westlake House</div>
+        <div class="cal-night"><i class="status booked"></i>Westlake House</div>
       </a>
       <a class="cal-day" href="#day-15" style="--from: var(--loc-hanoi)">
         <div class="cal-top"><span class="cal-date">13 <small><span class="cal-wd">Fri </span>Nov</small></span><span class="cal-daynum">Day 15</span></div>
@@ -1706,7 +1752,7 @@
           <div class="field"><span class="field-label">Duration</span><span class="field-value">~25–35 min</span></div>
           <div class="field"><span class="field-label">Cost</span><span class="field-value">~€7–10 per car</span></div>
         </div>
-        <div class="leg-note">Late arrival, so confirm late check-in with the host. A pre-booked taxi is an option if you'd rather not use Grab late at night.</div>
+        <div class="leg-note">The host has confirmed check-in at 21:30–22:00. A pre-booked taxi or the host's shuttle is an option if you'd rather not use Grab late at night.</div>
       </div>
     </div>
     <div class="tx-day">
@@ -1748,6 +1794,21 @@
     </div>
   </div>
 
+  <div class="packing" id="view-packing" hidden>
+    <p class="tx-intro">What to pack: a list for each of you and one for the things you share. Packed for about a week, with laundry along the way. Ticks are saved in this browser, so each of you can tick your own list on your own phone.</p>
+    <div class="pk-lists" id="pk-lists"></div>
+    <div class="jr-footer"><button type="button" class="jr-btn" id="pk-reset">Clear all ticks</button><span>Weight limit: 20 kg checked + 7 kg carry-on each (VietJet Deluxe).</span></div>
+  </div>
+
+  <div class="weather" id="view-weather" hidden>
+    <p class="tx-intro">The weather for each day of the trip, where you'll be that day. The forecast updates every time you open this tab; more than about a week ahead it's only a rough guide. Days the forecast doesn't reach yet show the usual weather for early November (2015–2025 average).</p>
+    <p class="wx-status" id="wx-status"></p>
+    <div class="wx-list" id="wx-list"></div>
+    <h3 class="wx-section-title">Usual weather, late October to mid-November</h3>
+    <div class="wx-typical" id="wx-typical"></div>
+    <p class="wx-status" style="margin-top: 14px">Forecast and averages from <a href="https://open-meteo.com" target="_blank" rel="noopener" style="color: var(--accent-gold)">Open-Meteo</a>. Times and dates are Vietnam time.</p>
+  </div>
+
   <div class="journey" id="view-journey" hidden>
     <p class="tx-intro">The whole trip as a story, step by step. Tick each step when it's done. The card below always shows what's next. Your ticks are saved in this browser.</p>
     <div class="jr-next" id="jr-next"></div>
@@ -1782,7 +1843,7 @@
   <section class="open-items">
     <h2>Open Items to Confirm</h2>
     <ul class="checklist">
-      <li>Book Westlake House for Nov 12 (flight lands 20:45, so confirm late check-in around 21:30–22:00)</li>
+      <li>Westlake House (booked, late check-in confirmed): ask the price of their airport shuttle for both rides</li>
       <li>WhatsApp HK Buslines: adjacent cabins on both buses, and the Nov 7 drop-off at Noi Bai Terminal 1</li>
       <li>Sapa Jade Hill: check they confirmed the special request (luggage storage on Nov 7, taxi to the bus ~21:30)</li>
       <li>Book paragliding for Nov 4 (Nov 5–7 as backups), ideally with hotel pickup and free rescheduling for bad weather</li>
@@ -1823,7 +1884,9 @@
       transfers: document.getElementById('view-transfers'),
       expenses: document.getElementById('view-expenses'),
       journey: document.getElementById('view-journey'),
-      gallery: document.getElementById('view-gallery')
+      gallery: document.getElementById('view-gallery'),
+      weather: document.getElementById('view-weather'),
+      packing: document.getElementById('view-packing')
     };
 
     function show(name) {
@@ -1831,6 +1894,7 @@
       buttons.forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.view === name)); });
       try { localStorage.setItem('itinerary-view', name); } catch (e) {}
       if (name !== 'timeline') stopTour();
+      if (name === 'weather') loadWeather();
     }
 
     buttons.forEach(function (b) {
@@ -1978,7 +2042,7 @@
       { cat: 'Accommodation', item: "Ben's Apartment, 2 nights", date: 'Nov 1 – 3', status: 'booked', eur: 37 },
       { cat: 'Accommodation', item: 'Sapa Jade Hill Resort & Spa, 4 nights', note: 'Panorama View Bungalow, breakfast included, via Klook', date: 'Nov 3 – 7', status: 'booked', eur: 449.85 },
       { cat: 'Accommodation', item: 'Phu Quoc Valley Sen Bungalow, 4 nights', note: 'VND 5,400,000, pay at the property', date: 'Nov 8 – 12', status: 'booked', eur: 186.35 },
-      { cat: 'Accommodation', item: 'Westlake House, 1 night', note: 'Shortlisted', date: 'Nov 12', status: 'tobook', eur: 20 },
+      { cat: 'Accommodation', item: 'Westlake House by Jen, 1 night', note: 'Pay at the property (VND 734,377)', date: 'Nov 12', status: 'booked', eur: 25.37 },
 
       { cat: 'Transport', item: 'Airport taxi to Silk Path', date: 'Oct 30', status: 'booked', eur: 9 },
       { cat: 'Transport', item: 'HK Buslines Hanoi → Sa Pa', note: 'US$42.78', date: 'Nov 3', status: 'booked', eur: 42.78 * USD },
@@ -2213,7 +2277,7 @@
   "sec": "Hanoi",
   "kind": "stay",
   "title": "Last night by West Lake",
-  "sub": "Night 14 · Westlake House (shortlisted)",
+  "sub": "Night 14 · Westlake House by Jen",
   "imgs": [
    {
     "t": "https://images.pexels.com/photos/19577375/pexels-photo-19577375.jpeg?auto=compress&cs=tinysrgb&w=800",
@@ -2807,8 +2871,8 @@
       { id: 'pre-jade', day: 0, title: 'Check Sapa Jade Hill confirmed your request', text: 'Luggage storage on Nov 7 after check-out, and a taxi to the HK Buslines office around 21:30.' },
       { id: 'pre-valley', day: 0, title: 'Message Valley Sen Bungalow', text: 'Ask them to hold your bags when you arrive around 1pm on Nov 8, and to keep your luggage on Nov 12 until you leave for the 18:40 flight.' },
       { id: 'pre-para', day: 0, title: 'Book paragliding for Nov 4', text: 'Book directly with a local operator (FlySapa, paraglidingsapa.com or Sapa Paragliding). Ask for hotel pickup at Sapa Jade Hill and free rescheduling for bad weather (Nov 5–7 as backups).' },
-      { id: 'pre-westlake', day: 0, title: 'Book the last night in Hanoi (Nov 12)', text: 'Westlake House by Jen is shortlisted. You land at 20:45, so confirm a late check-in around 21:30–22:00.' },
-      { id: 'pre-arrival', day: 0, title: 'Fill in the pre-arrival declaration (each of you)', text: 'Free, only on the official site <a href="https://prearrival.immigration.gov.vn" target="_blank" rel="noopener">prearrival.immigration.gov.vn</a>, at most 72 hours before landing: from about <strong>Oct 27</strong>, ideally the day before you fly. Use Silk Path Boutique Hanoi as your first address. Save the <strong>QR code</strong> for immigration at Noi Bai.', tip: 'Ignore copycat sites that charge a fee. It does not replace a visa; you still enter visa-free for 45 days.' },
+      { id: 'pre-westlake', day: 0, title: 'Ask Westlake House about their airport shuttle', text: 'Booked for Nov 12, and the host has confirmed your check-in at 21:30–22:00. Ask what their airport shuttle costs, for that evening (Terminal 1, you land at 20:45) and for the drop-off at Terminal 2 around 11:00 on Nov 13.' },
+      { id: 'pre-arrival', day: 0, title: 'Fill in the pre-arrival declaration (each of you)', text: 'Free, only on the official site <a href="https://prearrival.immigration.gov.vn" target="_blank" rel="noopener">prearrival.immigration.gov.vn</a>, once <strong>30/10/2026</strong> appears as an arrival date: the form only offers today and the next two dates (Vietnam time), so from <strong>Oct 28</strong> (Tuesday Oct 27 from 18:00 Belgian time). One submission can cover both of you via "Add Passenger". Use Silk Path Boutique Hanoi as your first address. Save the <strong>QR code</strong> for immigration at Noi Bai.', tip: 'Ignore copycat sites that charge a fee. It does not replace a visa; you still enter visa-free for 45 days.' },
       { id: 'pre-docs', day: 0, title: 'Passport and documents', text: 'Passport valid for at least 6 months. No visa needed: Belgians get 45 days visa-free. Save all booking confirmations offline on your phone.' },
 
       // Day 1
@@ -2877,7 +2941,7 @@
       { id: 'd14-checkout', day: 14, time: 'By 12:00', title: 'Check out and store your bags', text: 'Valley Sen Bungalow keeps your luggage until you leave for the airport.' },
       { id: 'd14-gw', day: 14, time: 'Afternoon', title: 'Grand World', text: 'In the north of the island, about 30–40 minutes away. Leave enough time to go back for your bags.' },
       { id: 'd14-airport', day: 14, time: '~16:30', title: 'To Phu Quoc Airport', text: 'Collect your bags and take a Grab. VietJet <strong>VJ446</strong> leaves at <strong>18:40</strong>; check-in closes about 40–60 minutes before.', chips: ['Passport'] },
-      { id: 'd14-hanoi', day: 14, time: '20:45', title: 'Land in Hanoi and go to your hotel', text: 'Grab or Xanh SM from Terminal 1 to Westlake House (if booked), about 25–35 minutes.' },
+      { id: 'd14-hanoi', day: 14, time: '20:45', title: 'Land in Hanoi and go to your hotel', text: 'Grab (or the host\'s shuttle, if you arranged it) from Terminal 1 to Westlake House by Jen, 27 Ngõ 472 Lạc Long Quân, Tây Hồ, about 25–35 minutes. Pay for the room at check-in, in VND.' },
 
       // Day 15
       { id: 'd15-morning', day: 15, time: 'Morning', title: 'A slow last morning by the lake', text: 'Breakfast, a last coffee, and pack for home.' },
@@ -2956,6 +3020,304 @@
         done = {}; save(); update();
       });
       update();
+    })();
+
+    // Weather tab: live daily forecast from Open-Meteo (free, no key), fetched the first time
+    // the tab opens. WX_SNAPSHOT is the forecast saved on Oct 27 (offline fallback); dates
+    // outside the forecast range show the 2015–2025 average for Oct 26 – Nov 16 (WX_CLIMATE).
+    // Rows are [weather code, max °C, min °C, rain chance %, rain mm, gusts km/h, UV].
+    var WX_SNAPSHOT = {"hanoi":{"2026-10-30":[81,28,23,94,24.6,25,7],"2026-10-31":[51,31,24,69,0.9,38,6],"2026-11-01":[51,31,24,43,1.2,38,5],"2026-11-02":[51,31,24,71,2.4,31,6],"2026-11-03":[51,30,24,42,1.2,23,5],"2026-11-04":[51,30,24,48,2.2,32,6],"2026-11-05":[53,30,23,59,7.2,26,4],"2026-11-06":[51,31,24,53,1.4,30,6],"2026-11-07":[51,31,24,47,1.8,35,6],"2026-11-08":[80,32,23,37,13.8,27,2],"2026-11-09":[80,25,21,40,10.2,57,3],"2026-11-10":[80,25,19,39,9.4,41,4],"2026-11-11":[80,29,19,39,15.4,36,6]},"halong":{"2026-10-30":[95,29,24,86,24.5,34,6],"2026-10-31":[95,30,24,33,6.8,35,7],"2026-11-01":[53,30,25,43,2.3,34,6],"2026-11-02":[51,30,24,84,0.9,33,5],"2026-11-03":[51,30,24,27,1.2,37,6],"2026-11-04":[53,29,24,55,7.4,36,6],"2026-11-05":[53,29,23,71,5.4,34,7],"2026-11-06":[51,29,24,57,1.6,41,6],"2026-11-07":[51,30,24,54,2.4,31,2],"2026-11-08":[51,30,24,43,1.2,35,1],"2026-11-09":[3,26,20,43,0.0,55,3],"2026-11-10":[80,23,18,47,12.4,52,4],"2026-11-11":[81,27,17,48,18.8,49,6]},"sapa":{"2026-10-30":[53,23,13,18,1.0,20,6],"2026-10-31":[51,24,16,44,0.1,24,7],"2026-11-01":[51,25,16,77,0.5,28,6],"2026-11-02":[80,20,18,90,10.2,22,1],"2026-11-03":[51,23,15,32,0.6,20,4],"2026-11-04":[51,22,14,32,0.6,19,5],"2026-11-05":[45,23,13,34,0.0,20,6],"2026-11-06":[51,23,16,61,1.2,24,5],"2026-11-07":[51,24,16,55,0.6,26,5],"2026-11-08":[95,22,15,41,24.0,26,3],"2026-11-09":[80,17,12,55,16.8,31,2],"2026-11-10":[3,19,11,42,0.0,28,1],"2026-11-11":[53,19,13,68,3.1,10,4]},"fansipan":{"2026-10-30":[45,14,2,18,0.0,23,6],"2026-10-31":[51,14,5,44,0.5,40,7],"2026-11-01":[51,15,6,77,1.6,38,6],"2026-11-02":[51,12,7,90,3.7,25,1],"2026-11-03":[51,13,5,32,1.4,35,4],"2026-11-04":[51,14,4,32,0.6,23,5],"2026-11-05":[45,14,2,34,0.0,30,6],"2026-11-06":[51,14,6,61,4.0,28,5],"2026-11-07":[51,13,5,55,2.6,35,5],"2026-11-08":[53,14,5,41,8.4,35,3],"2026-11-09":[55,7,0,55,9.0,44,2],"2026-11-10":[3,10,-1,42,0.0,36,1],"2026-11-11":[53,9,1,68,3.1,20,4]},"pq":{"2026-10-30":[95,30,24,87,11.7,40,8],"2026-10-31":[80,30,24,76,10.9,36,8],"2026-11-01":[80,30,24,73,7.8,27,8],"2026-11-02":[95,30,24,88,7.3,28,8],"2026-11-03":[51,30,24,90,6.0,29,8],"2026-11-04":[51,30,24,72,2.6,34,8],"2026-11-05":[95,31,24,75,6.6,29,7],"2026-11-06":[53,30,24,80,11.6,21,8],"2026-11-07":[53,31,24,79,3.4,24,8],"2026-11-08":[55,31,24,69,12.2,27,8],"2026-11-09":[53,30,24,65,6.8,27,8],"2026-11-10":[53,30,23,72,4.4,25,8],"2026-11-11":[51,30,24,63,3.6,20,8]}};
+    var WX_CLIMATE = {"hanoi":{"max":26.9,"min":20.0,"rainChance":32},"halong":{"max":27.1,"min":20.6,"rainChance":31},"sapa":{"max":18.8,"min":13.3,"rainChance":57},"fansipan":{"max":9.2,"min":2.4,"rainChance":45},"pq":{"max":29.5,"min":24.4,"rainChance":77}};
+    var WX_SNAPSHOT_DATE = 'Oct 27';
+    var WX_PLACES = {
+      hanoi: { name: 'Hanoi', lat: 21.0285, lon: 105.8542, loc: 'hanoi' },
+      halong: { name: 'Ha Long Bay', lat: 20.95, lon: 107.05, loc: 'halong' },
+      sapa: { name: 'Sa Pa', lat: 22.336, lon: 103.844, loc: 'sapa' },
+      fansipan: { name: 'Fansipan summit (3,143 m)', lat: 22.3033, lon: 103.775, loc: 'sapa' },
+      pq: { name: 'Phu Quoc', lat: 10.227, lon: 103.963, loc: 'pq' }
+    };
+    var WX_DAYS = [
+      { day: 1, date: '2026-10-30', place: 'hanoi', what: 'Arrival, Old Quarter, Train Street, Beer Street' },
+      { day: 2, date: '2026-10-31', place: 'halong', what: 'Cruise, Luon Cave by kayak or bamboo boat, sundeck dinner', focus: 'cruise' },
+      { day: 3, date: '2026-11-01', place: 'halong', what: 'Sunrise tai chi, Titov Island, Dragon Pearl Cave' },
+      { day: 4, date: '2026-11-02', place: 'hanoi', what: 'Massage, Rock King Coffee, Sky Lotte', focus: 'view' },
+      { day: 5, date: '2026-11-03', place: 'sapa', what: 'Bus to Sa Pa, Cat Cat Village' },
+      { day: 6, date: '2026-11-04', place: 'sapa', what: 'Paragliding (Nov 5–7 as backups)', focus: 'paragliding' },
+      { day: 7, date: '2026-11-05', place: 'sapa', what: 'Rong May Glass Bridge over the O Quy Ho Pass', focus: 'pass' },
+      { day: 8, date: '2026-11-06', place: 'sapa', what: 'Fansipan cable car and summit', focus: 'fansipan' },
+      { day: 9, date: '2026-11-07', place: 'sapa', what: 'Buffer day, night bus at 22:00' },
+      { day: 10, date: '2026-11-08', place: 'pq', what: 'Flight to Phu Quoc, Sao Beach', focus: 'beach' },
+      { day: 11, date: '2026-11-09', place: 'pq', what: "Duong Dong Market, Rory's Beach Bar", focus: 'beach' },
+      { day: 12, date: '2026-11-10', place: 'pq', what: 'Hon Thom cable car to Thom Island', focus: 'beach' },
+      { day: 13, date: '2026-11-11', place: 'pq', what: 'Massage, Ocsen Beach Bar', focus: 'beach' },
+      { day: 14, date: '2026-11-12', place: 'pq', what: 'Grand World, evening flight to Hanoi' },
+      { day: 15, date: '2026-11-13', place: 'hanoi', what: 'Free morning, flight home at 13:30' }
+    ];
+    var wxLive = null, wxLoading = false, wxStatus = 'snapshot';
+
+    function wxCode(c, mm) {
+      if (c >= 51 && c <= 55 && mm < 1) return ['🌥️', 'Cloudy, a few drops'];
+      if (c === 0) return ['☀️', 'Clear'];
+      if (c === 1) return ['🌤️', 'Mostly clear'];
+      if (c === 2) return ['⛅', 'Partly cloudy'];
+      if (c === 3) return ['☁️', 'Cloudy'];
+      if (c === 45 || c === 48) return ['🌫️', 'Fog'];
+      if (c >= 51 && c <= 57) return ['🌦️', 'Drizzle'];
+      if (c === 61 || c === 80) return ['🌦️', 'Light showers'];
+      if (c >= 61 && c <= 67) return ['🌧️', 'Rain'];
+      if (c >= 81 && c <= 82) return ['🌧️', 'Heavy showers'];
+      if (c >= 95) return ['⛈️', 'Thunderstorms'];
+      return ['☁️', 'Cloudy'];
+    }
+    function wxToday() {
+      try { return new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Ho_Chi_Minh' }).format(new Date()); } catch (e) { return ''; }
+    }
+    function wxLabel(date) {
+      var d = new Date(date + 'T12:00:00Z');
+      return ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'][d.getUTCDay()] + ' ' +
+        ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'][d.getUTCMonth()] + ' ' + d.getUTCDate();
+    }
+    function wxRow(place, date) {
+      var src = wxLive && wxLive[place] ? wxLive[place] : WX_SNAPSHOT[place];
+      return src && src[date] ? src[date] : null;
+    }
+    // Paragliding: 'good' when dry-ish and calm, 'bad' when wet or gusty. Gusts are at town level;
+    // the operator makes the final call on the morning, and low cloud is the usual spoiler.
+    function wxFly(r) {
+      if (!r) return null;
+      if (r[5] >= 30 || r[3] >= 60 || r[4] >= 5) return 'bad';
+      if (r[5] <= 22 && r[3] < 40) return 'good';
+      return 'warn';
+    }
+    function wxNotes(d, r) {
+      var n = [];
+      if (d.focus === 'cruise') {
+        if (r[5] >= 50) n.push(['bad', 'Strong gusts: sailings can be delayed by the port authority. Ambassador will let you know.']);
+        else if (r[3] >= 60 || r[0] >= 95) n.push(['warn', 'Showers or a thunderstorm possible, but the caves and the cabin are sheltered.']);
+        else n.push(['good', 'Good conditions for the kayak or bamboo boat at Luon Cave.']);
+      }
+      if (d.focus === 'paragliding') {
+        var f = wxFly(r);
+        n.push([f, f === 'good' ? 'Looks flyable. The operator confirms on the morning.' : f === 'bad' ? 'Likely grounded: keep Nov 5–7 open as backups.' : 'Uncertain: the operator decides on the morning.']);
+        var best = null;
+        ['2026-11-05', '2026-11-06', '2026-11-07'].forEach(function (dt) {
+          var b = wxRow('sapa', dt);
+          if (!b) return;
+          var score = b[3] + b[5] * 2 + b[4] * 5;
+          if (!best || score < best.score) best = { dt: dt, score: score, fly: wxFly(b) };
+        });
+        if (best) n.push([best.fly, 'Best backup day so far: ' + wxLabel(best.dt) + '.']);
+      }
+      if (d.focus === 'pass') {
+        if (r[3] >= 50 || r[0] === 45 || r[0] === 48) n.push(['warn', 'Fog and rain are common on the O Quy Ho Pass, so the bridge may have no view. Swap with Fansipan or the buffer day if needed.']);
+        else n.push(['good', 'A good day for the views from the glass bridge.']);
+      }
+      if (d.focus === 'fansipan') {
+        var s = wxRow('fansipan', d.date);
+        if (s) n.push(['warn', 'Summit: ' + s[1] + '° / ' + s[2] + '°. Bring a warm layer and a rain jacket.']);
+        else n.push(['warn', 'The summit is usually around ' + WX_CLIMATE.fansipan.max + '° / ' + WX_CLIMATE.fansipan.min + '°. Bring a warm layer.']);
+      }
+      if (d.focus === 'view' && r[3] >= 60) n.push(['warn', 'Rain or haze can hide the view from Sky Lotte. Go when it clears.']);
+      if (d.focus === 'beach') {
+        if (r[3] >= 60) n.push(['warn', 'Showers likely, usually short tropical bursts.']);
+        if (r[6] >= 8) n.push(['warn', 'Very high UV (' + r[6] + '): sunscreen and shade around midday.']);
+      }
+      if (d.place === 'sapa' && r[2] <= 12) n.push(['warn', 'Cold night (' + r[2] + '°): bring a jacket.']);
+      if (r[1] >= 31) n.push(['warn', 'Hot: drink plenty of water.']);
+      return n;
+    }
+    function wxRender() {
+      var today = wxToday();
+      var status = document.getElementById('wx-status');
+      status.textContent = wxStatus === 'live' ? 'Live forecast from Open-Meteo, updated just now.'
+        : wxStatus === 'loading' ? 'Loading the latest forecast…'
+        : 'Offline: showing the forecast saved on ' + WX_SNAPSHOT_DATE + '.';
+
+      var typ = ['hanoi', 'halong', 'sapa', 'fansipan', 'pq'].map(function (k) {
+        var c = WX_CLIMATE[k], p = WX_PLACES[k];
+        return '<div class="wx-typ" style="--loc: var(--loc-' + p.loc + ')"><div class="wx-typ-name">' + p.name + '</div>' +
+          '<div class="wx-typ-temp">' + Math.round(c.max) + '° <small>/ ' + Math.round(c.min) + '°</small></div>' +
+          '<div class="wx-typ-rain">Rain on ~' + c.rainChance + '% of days</div></div>';
+      }).join('');
+      document.getElementById('wx-typical').innerHTML = typ;
+
+      document.getElementById('wx-list').innerHTML = WX_DAYS.map(function (d) {
+        var p = WX_PLACES[d.place], r = wxRow(d.place, d.date), body, src;
+        if (r) {
+          var w = wxCode(r[0], r[4]);
+          src = d.date < today ? 'Actual' : 'Forecast';
+          body = '<div class="wx-main"><span class="wx-icon" aria-hidden="true">' + w[0] + '</span>' +
+            '<span class="wx-temp">' + r[1] + '° <small>/ ' + r[2] + '°</small></span><span class="wx-desc">' + w[1] + '</span></div>' +
+            '<div class="wx-facts"><span>💧 ' + r[3] + '% · ' + r[4] + ' mm</span><span>💨 gusts ' + r[5] + ' km/h</span>' +
+            (r[6] ? '<span>UV ' + r[6] + '</span>' : '') + '</div>' +
+            wxNotes(d, r).map(function (x) { return '<div class="wx-note wx-' + x[0] + '">' + x[1] + '</div>'; }).join('');
+        } else {
+          var c = WX_CLIMATE[d.place];
+          src = 'Typical';
+          body = '<div class="wx-main"><span class="wx-icon" aria-hidden="true">📅</span>' +
+            '<span class="wx-temp">' + Math.round(c.max) + '° <small>/ ' + Math.round(c.min) + '°</small></span><span class="wx-desc">Usual for early November</span></div>' +
+            '<div class="wx-facts"><span>💧 rain on ~' + c.rainChance + '% of days</span></div>' +
+            '<div class="wx-note wx-muted">The forecast reaches this day about 16 days ahead.</div>';
+        }
+        return '<div class="wx-day' + (d.date === today ? ' wx-today' : '') + '" style="--loc: var(--loc-' + p.loc + ')">' +
+          '<div class="wx-head"><span>Day ' + d.day + ' · ' + wxLabel(d.date) + '</span><span class="wx-src">' + src + '</span></div>' +
+          '<div class="wx-place">' + p.name + '</div><div class="wx-what">' + d.what + '</div>' + body + '</div>';
+      }).join('');
+    }
+    function loadWeather() {
+      if (wxLive || wxLoading || !window.fetch) return;
+      wxLoading = true; wxStatus = 'loading'; wxRender();
+      var keys = Object.keys(WX_PLACES);
+      Promise.all(keys.map(function (k) {
+        var p = WX_PLACES[k];
+        var url = 'https://api.open-meteo.com/v1/forecast?latitude=' + p.lat + '&longitude=' + p.lon +
+          '&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max,precipitation_sum,wind_gusts_10m_max,uv_index_max' +
+          '&timezone=Asia%2FBangkok&past_days=14&forecast_days=16';
+        return fetch(url).then(function (res) { if (!res.ok) throw new Error(res.status); return res.json(); });
+      })).then(function (all) {
+        wxLive = {};
+        all.forEach(function (j, i) {
+          var dd = j.daily, rows = {};
+          dd.time.forEach(function (t, n) {
+            if (dd.temperature_2m_max[n] == null) return;
+            rows[t] = [dd.weather_code[n], Math.round(dd.temperature_2m_max[n]), Math.round(dd.temperature_2m_min[n]),
+              dd.precipitation_probability_max[n] == null ? 0 : dd.precipitation_probability_max[n],
+              Math.round((dd.precipitation_sum[n] || 0) * 10) / 10, Math.round(dd.wind_gusts_10m_max[n] || 0), Math.round(dd.uv_index_max[n] || 0)];
+          });
+          wxLive[keys[i]] = rows;
+        });
+        wxStatus = 'live';
+      }).catch(function () {
+        wxLive = null; wxStatus = 'snapshot';
+      }).then(function () { wxLoading = false; wxRender(); });
+    }
+    wxRender();
+
+    // Packing tab: three checklists rendered from PACK_PERSONAL (copied for each of you) and
+    // PACK_SHARED. Ticks are saved per browser in localStorage ('packing-done'), so each phone
+    // keeps its own ticks.
+    var PACK_PEOPLE = [{ id: 'jens', name: 'Jens' }, { id: 'gf', name: 'Girlfriend' }];
+    var PACK_PERSONAL = [
+      { group: 'Documents and money', items: [
+        ['passport', 'Passport', 'Valid until well after the trip; keep a photo of it on your phone'],
+        ['prearrival', 'Pre-arrival QR code', 'Screenshot saved on your phone'],
+        ['cards', 'Bank cards', 'Two cards if you can, kept apart'],
+        ['euros', 'Some euros in cash', 'To change into dong if an ATM fails']
+      ] },
+      { group: 'Phone', items: [
+        ['phone', 'Phone with the Klook eSIM installed', 'Switched off until you land'],
+        ['charger', 'Phone charger and cable'],
+        ['earphones', 'Earphones', 'For the buses and flights']
+      ] },
+      { group: 'Clothes', items: [
+        ['tops', '5–6 light T-shirts or tops', 'Linen, cotton or quick-dry'],
+        ['shorts', '2–3 shorts or skirts'],
+        ['trousers', '1 light pair of long trousers', 'Temples, mosquitoes, paragliding'],
+        ['warmtrousers', '1 warmer pair of trousers or jeans', 'Sa Pa evenings'],
+        ['longsleeve', '1 long-sleeve shirt', 'Sun and mosquitoes'],
+        ['fleece', 'Fleece or warm sweater', 'Fansipan (~6–14°), Sa Pa nights, cold bus air conditioning'],
+        ['downjacket', 'Thin down jacket (optional)', 'If you get cold easily'],
+        ['rainjacket', 'Light rain jacket', 'Showers are forecast almost every day'],
+        ['swim', '2 sets of swimwear', 'Cruise and Phu Quoc'],
+        ['nice', 'One nicer outfit', 'Cruise dinner, Ocsen, Grand World'],
+        ['underwear', 'Underwear for a week', 'Laundry costs ~€1–2 per kg'],
+        ['socks', 'Socks for a week, plus a warm pair', 'Sa Pa and the buses'],
+        ['sleep', 'Sleepwear']
+      ] },
+      { group: 'Shoes and accessories', items: [
+        ['trainers', 'Comfortable trainers or walking shoes', 'Required for paragliding'],
+        ['sandals', 'Sandals or flip-flops', 'Beach, bungalow, and the buses (shoes off)'],
+        ['cap', 'Cap or hat'],
+        ['sunglasses', 'Sunglasses']
+      ] },
+      { group: 'Toiletries', items: [
+        ['toothbrush', 'Toothbrush and toothpaste'],
+        ['deo', 'Deodorant'],
+        ['wash', 'Shampoo and shower gel (travel size)', 'Hotels usually provide them'],
+        ['meds', 'Personal medication', 'Enough for the whole trip, in your carry-on'],
+        ['lenses', 'Glasses or contact lenses (if you use them)']
+      ] },
+      { group: 'Night bus bag (Nov 7)', items: [
+        ['busbag', 'Small bag for the night bus', 'Toothbrush, wet wipes and a clean shirt: you go straight to the 10:10 flight'],
+        ['earplugs', 'Earplugs and an eye mask']
+      ] }
+    ];
+    var PACK_EXTRA = {
+      gf: [{ group: 'Clothes', items: [['scarf', 'Light scarf or sarong', 'Covers shoulders and knees at temples']] }]
+    };
+    var PACK_SHARED = [
+      { group: 'Health', items: [
+        ['repellent', 'Mosquito repellent', 'With ~30% DEET'],
+        ['sunscreen', 'Sunscreen, SPF 50', 'UV index around 8 on Phu Quoc'],
+        ['firstaid', 'Small first-aid kit', 'Plasters, paracetamol, Imodium, oral rehydration salts, antiseptic'],
+        ['sanitiser', 'Hand sanitiser and tissues', 'Bus stops often have no toilet paper'],
+        ['wipes', 'Wet wipes']
+      ] },
+      { group: 'Gear', items: [
+        ['powerbank', 'Power bank', 'In your carry-on, never in the checked bag'],
+        ['adapter', 'Travel adapter', 'Most Vietnamese sockets take EU two-pin plugs, but not all'],
+        ['daypack', 'Small day backpack'],
+        ['drybag', 'Dry bag or zip bags', 'Kayaking, beach, rain'],
+        ['laundry', 'Laundry bag'],
+        ['bottle', 'Reusable water bottle'],
+        ['ponchos', '2 rain ponchos', 'Or buy them there for under €1'],
+        ['lock', 'Small padlock', 'For luggage on the buses']
+      ] },
+      { group: 'Bookings and admin', items: [
+        ['offline', 'All bookings saved offline', 'Screenshots or PDFs: cruise, hotels, buses, flights, taxi'],
+        ['insurance', 'Travel insurance details', 'Policy number and emergency phone number'],
+        ['copies', 'Passport copies', 'One on paper, one in your email'],
+        ['itinerary', 'This itinerary on your home screen', 'Add the GitHub Pages link to both phones']
+      ] },
+      { group: 'Before you leave home', items: [
+        ['banks', 'Tell the banks you are travelling', 'Or check the card app allows payments in Vietnam'],
+        ['esimgf', "Install your girlfriend's eSIM"],
+        ['weather', 'Check the Weather tab one last time']
+      ] }
+    ];
+
+    (function () {
+      var KEY = 'packing-done';
+      var done = {};
+      try { (JSON.parse(localStorage.getItem(KEY)) || []).forEach(function (id) { done[id] = true; }); } catch (e) {}
+      function save() { try { localStorage.setItem(KEY, JSON.stringify(Object.keys(done))); } catch (e) {} }
+
+      function groupsFor(list) {
+        if (list === 'shared') return PACK_SHARED;
+        var extra = PACK_EXTRA[list] || [];
+        return PACK_PERSONAL.map(function (g) {
+          var add = extra.filter(function (x) { return x.group === g.group; });
+          return { group: g.group, items: g.items.concat.apply(g.items, add.map(function (x) { return x.items; })) };
+        });
+      }
+      var lists = PACK_PEOPLE.map(function (p) { return { id: p.id, name: p.name }; }).concat([{ id: 'shared', name: 'Shared' }]);
+
+      function render() {
+        document.getElementById('pk-lists').innerHTML = lists.map(function (l) {
+          var total = 0, ticked = 0;
+          var html = groupsFor(l.id).map(function (g) {
+            return '<h4 class="pk-group">' + g.group + '</h4><ul class="pk-items">' + g.items.map(function (it) {
+              var id = l.id + ':' + it[0];
+              total++; if (done[id]) ticked++;
+              return '<li class="pk-item' + (done[id] ? ' done' : '') + '"><label><input type="checkbox" data-id="' + id + '"' + (done[id] ? ' checked' : '') + '>' +
+                '<span><span class="pk-name">' + it[1] + '</span>' + (it[2] ? '<span class="pk-note">' + it[2] + '</span>' : '') + '</span></label></li>';
+            }).join('') + '</ul>';
+          }).join('');
+          return '<section class="pk-list"><div class="pk-head"><h3>' + l.name + '</h3><span class="pk-count">' + ticked + ' / ' + total + ' packed</span></div>' +
+            '<div class="pk-bar"><i style="width: ' + (total ? Math.round(ticked / total * 100) : 0) + '%"></i></div>' + html + '</section>';
+        }).join('');
+      }
+      document.getElementById('pk-lists').addEventListener('change', function (e) {
+        var id = e.target.dataset && e.target.dataset.id;
+        if (!id) return;
+        if (e.target.checked) done[id] = true; else delete done[id];
+        save(); render();
+      });
+      document.getElementById('pk-reset').addEventListener('click', function () {
+        if (!window.confirm('Clear all ticks in the packing lists?')) return;
+        done = {}; save(); render();
+      });
+      render();
     })();
 
     var saved;
